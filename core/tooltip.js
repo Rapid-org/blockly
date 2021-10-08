@@ -167,10 +167,10 @@ Blockly.Tooltip.onMouseOut_ = function(e) {
   // event and kill it if a mouseOver is received immediately.
   // This way the task only fully executes if mousing into the void.
   Blockly.Tooltip.mouseOutPid_ = setTimeout(function() {
-        Blockly.Tooltip.element_ = null;
-        Blockly.Tooltip.poisonedElement_ = null;
-        Blockly.Tooltip.hide();
-      }, 1);
+    Blockly.Tooltip.element_ = null;
+    Blockly.Tooltip.poisonedElement_ = null;
+    Blockly.Tooltip.hide();
+  }, 1);
   clearTimeout(Blockly.Tooltip.showPid_);
 };
 
@@ -291,6 +291,9 @@ Blockly.Tooltip.show_ = function() {
  * @private
  */
 Blockly.Tooltip.wrap_ = function(text, limit) {
+  if (!text) {
+    return text;
+  }
   if (text.length <= limit) {
     // Short text, no need to wrap.
     return text;
