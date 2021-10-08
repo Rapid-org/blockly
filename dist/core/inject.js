@@ -40,7 +40,7 @@ goog.require('goog.userAgent');
  * @return {!Blockly.Workspace} Newly created main workspace.
  */
 Blockly.inject = function(container, opt_options) {
-  if (goog.isString(container)) {
+  if (typeof container === "string") {
     container = document.getElementById(container);
   }
   // Verify that the container is in document.
