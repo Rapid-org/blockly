@@ -225,8 +225,10 @@ Blockly.Trashcan.prototype.position = function() {
   }
   this.top_ = metrics.viewHeight + metrics.absoluteTop -
       (this.BODY_HEIGHT_ + this.LID_HEIGHT_) - this.bottom_;
-  this.svgGroup_.setAttribute('transform',
-      'translate(' + this.left_ + ',' + this.top_ + ')');
+  if (this.svgGroup_) {
+    this.svgGroup_.setAttribute('transform',
+        'translate(' + this.left_ + ',' + this.top_ + ')');
+  }
 };
 
 /**
@@ -264,14 +266,16 @@ Blockly.Trashcan.prototype.animateLid_ = function() {
   this.lidOpen_ += this.isOpen ? 0.2 : -0.2;
   this.lidOpen_ = goog.math.clamp(this.lidOpen_, 0, 1);
   var lidAngle = this.lidOpen_ * 45;
-  this.svgLid_.setAttribute('transform', 'rotate(' +
-      (this.workspace_.RTL ? -lidAngle : lidAngle) + ',' +
-      (this.workspace_.RTL ? 4 : this.WIDTH_ - 4) + ',' +
-      (this.LID_HEIGHT_ - 2) + ')');
-  var opacity = goog.math.lerp(0.4, 0.8, this.lidOpen_);
-  this.svgGroup_.style.opacity = opacity;
-  if (this.lidOpen_ > 0 && this.lidOpen_ < 1) {
-    this.lidTask_ = setTimeout(this.animateLid_, 20, this);
+  if (this.svgLid_) {
+    this.svgLid_.setAttribute('transform', 'rotate(' +
+        (this.workspace_.RTL ? -lidAngle : lidAngle) + ',' +
+        (this.workspace_.RTL ? 4 : this.WIDTH_ - 4) + ',' +
+        (this.LID_HEIGHT_ - 2) + ')');
+    var opacity = goog.math.lerp(0.4, 0.8, this.lidOpen_);
+    this.svgGroup_.style.opacity = opacity;
+    if (this.lidOpen_ > 0 && this.lidOpen_ < 1) {
+      this.lidTask_ = setTimeout(this.animateLid_, 20, this);
+    }
   }
 };
 
