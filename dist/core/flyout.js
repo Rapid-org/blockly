@@ -375,7 +375,7 @@ Blockly.Flyout.prototype.show = function(xmlList) {
     goog.asserts.assert(typeof fnToApply === "function",
         'Couldn\'t find a callback function when opening a toolbox category.');
     xmlList = fnToApply(this.workspace_.targetWorkspace);
-    goog.asserts.assert(goog.isArray(xmlList),
+    goog.asserts.assert(typeof xmlList === "array",
         'The result of a toolbox category callback must be an array.');
   }
 

@@ -97,7 +97,7 @@ Blockly.Generator.prototype.workspaceToCode = function(workspace, parms) {
     if (stash !== '') {
       codearray.push(stash);
     }
-    if (goog.isArray(line)) {
+    if (typeof line === "array") {
       // Value blocks return tuples of code and operator order.
       // Top-level blocks don't care about operator order.
       line = line[0];

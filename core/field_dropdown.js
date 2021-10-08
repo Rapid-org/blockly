@@ -208,7 +208,7 @@ Blockly.FieldDropdown.prototype.trimOptions_ = function() {
   this.prefixField = null;
   this.suffixField = null;
   var options = this.menuGenerator_;
-  if (!goog.isArray(options) || options.length < 2) {
+  if (!typeof options === "array" || options.length < 2) {
     return;
   }
   var strings = options.map(function(t) {return t[0];});

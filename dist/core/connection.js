@@ -644,7 +644,7 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
 Blockly.Connection.prototype.setCheck = function(check,requireType) {
   if (check) {
     // Ensure that check is in an array.
-    if (!goog.isArray(check)) {
+    if (!typeof check === "array") {
       check = [check];
     }
     this.check_ = check;
