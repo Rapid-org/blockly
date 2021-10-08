@@ -385,7 +385,7 @@ Blockly.TypeBlock.sectionToXMLString = function(section,attributes) {
       if (attributes.hasOwnProperty(key)) {
         var val = attributes[key];
         // Handle short cut for number values.
-        if (section === 'value' && goog.isNumber(val)) {
+        if (section === 'value' && typeof val === "number") {
           val = '<shadow type="math_number">'+
                     '<field name="NUM">' + val + '</field></shadow>';
         }
