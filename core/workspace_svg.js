@@ -1110,7 +1110,7 @@ Blockly.WorkspaceSvg.prototype['removeChangeListener'] =
     Blockly.WorkspaceSvg.prototype.removeChangeListener;
 
 Blockly.WorkspaceSvg.prototype.registerToolboxCategoryCallback = function(key, func) {
-    goog.asserts.assert(goog.isFunction(func),
+    goog.asserts.assert(typeof func === "function",
         'Toolbox category callbacks must be functions.');
     this.toolboxCategoryCallbacks_[key] = func;
   };

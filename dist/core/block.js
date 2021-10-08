@@ -157,7 +157,7 @@ Blockly.Block.prototype.fill = function(workspace, prototypeName) {
     goog.mixin(this, prototype);
   }
   // Call an initialization function, if it exists.
-  if (goog.isFunction(this.init)) {
+  if (typeof this.init === "function") {
     this.init();
   }
   // Record initial inline state.

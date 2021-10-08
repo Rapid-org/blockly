@@ -145,7 +145,7 @@ Blockly.BlockSvg.prototype.initSvg = function() {
                        function(e) {Blockly.longStart_(e, thisBlock);});
   }
   // Bind an onchange function, if it exists.
-  if (goog.isFunction(this.onchange) && !this.eventsInit_) {
+  if (typeof this.onchange === "function" && !this.eventsInit_) {
     this.onchangeWrapper_ = Blockly.bindEvent_(this.workspace.getCanvas(),
         'blocklyWorkspaceChange', this, this.onchange);
   }
@@ -572,7 +572,7 @@ Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
  * @private
  */
 Blockly.BlockSvg.prototype.showHelp_ = function() {
-  var url = goog.isFunction(this.helpUrl) ? this.helpUrl() : this.helpUrl;
+  var url = typeof this.helpUrl === "function" ? this.helpUrl() : this.helpUrl;
   if (url) {
     window.open(url);
   }
@@ -711,7 +711,7 @@ Blockly.BlockSvg.prototype.buildContextMenu_ = function() {
   }
 
   // Option to get help.
-  var url = goog.isFunction(this.helpUrl) ? this.helpUrl() : this.helpUrl;
+  var url = typeof this.helpUrl === "function" ? this.helpUrl() : this.helpUrl;
   var helpOption = {enabled: !!url};
   helpOption.text = Blockly.Msg.HELP;
   helpOption.callback = function() {
