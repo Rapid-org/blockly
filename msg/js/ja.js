@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "値は false のあいだ、
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "値は true のあいだ、いくつかのステートメントを行います。";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "ブロックを消す";
 Blockly.Msg["DELETE_X_BLOCKS"] = "%1 個のブロックを消す";
 Blockly.Msg["DISABLE_BLOCK"] = "ブロックを無効にします。";

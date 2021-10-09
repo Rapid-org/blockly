@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Bir değer yanlış olduğun
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Bir değer doğru olduğunda bazı beyanlarda bulun.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Bloğu Sil";
 Blockly.Msg["DELETE_X_BLOCKS"] = "%1 Blokları Sil";
 Blockly.Msg["DISABLE_BLOCK"] = "Bloğu Devre Dışı Bırak";

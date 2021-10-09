@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Док вредност ни
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Док је вредност тачна, онда извршите неке наредбе.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Обриши блок";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Обриши %1 блокова";
 Blockly.Msg["DISABLE_BLOCK"] = "Онемогући блок";

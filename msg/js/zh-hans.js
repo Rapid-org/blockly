@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "只要值为假，执行一�
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "只要值为真，执行一些语句。";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "删除块";
 Blockly.Msg["DELETE_X_BLOCKS"] = "删除 %1 块";
 Blockly.Msg["DISABLE_BLOCK"] = "禁用块";

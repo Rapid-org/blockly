@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Keit ha ma vez faos un dalvo
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Keit ha ma vez gwir un dalvoudenn, seveniñ urzhioù zo neuze.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Dilemel ar bloc'h";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Dilemel %1 bloc'h";
 Blockly.Msg["DISABLE_BLOCK"] = "Diweredekaat ar bloc'h";

@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Lakukan beberapa perintah ap
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Lakukan beberapa perintah apabila nilainya benar (true).";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Hapuskan Blok";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Hapuskan %1 Blok";
 Blockly.Msg["DISABLE_BLOCK"] = "Matikan Blok";

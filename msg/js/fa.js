@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "تا زمانی که یک م
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "تا زمانی که یک مقدار صحیح است، چند عبارت را انجام بده.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "حذف بلوک";
 Blockly.Msg["DELETE_X_BLOCKS"] = "حذف بلوک‌های %1";
 Blockly.Msg["DISABLE_BLOCK"] = "غیرفعال‌سازی بلوک";

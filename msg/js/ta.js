@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "மாறி பொய் �
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "மாறி உண்மை ஆக உள்ள வரை, கட்டளைகளை இயக்கு";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "உறுப்பை நீக்கு";
 Blockly.Msg["DELETE_X_BLOCKS"] = "%1 உறுப்பை நீக்கு";
 Blockly.Msg["DISABLE_BLOCK"] = "உறுப்பை இயங்காது செய்";

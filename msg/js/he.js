@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "בזמן שהערך שווה
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "כל עוד הערך הוא אמת, לעשות כמה פעולות.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "מחק קטע קוד";
 Blockly.Msg["DELETE_X_BLOCKS"] = "מחק %1 קטעי קוד";
 Blockly.Msg["DISABLE_BLOCK"] = "נטרל קטע קוד";

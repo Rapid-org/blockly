@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Hələ ki, qiymət \"yalan\"
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Hələ ki, qiymət \"doğru\"dur, bəzi əmrləri yerinə yetir.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Bloku sil";
 Blockly.Msg["DELETE_X_BLOCKS"] = "%1 bloku sil";
 Blockly.Msg["DISABLE_BLOCK"] = "Bloku söndür";

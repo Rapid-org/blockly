@@ -1660,3 +1660,5 @@ Blockly.Msg.COLOUR_HEX_TO_DECIMAL_TYPEBLOCK = 'to decimal';
 Blockly.Msg.COLOUR_HEX = 'hex';
 
 Blockly.Msg.COLOUR_TO_DECIMAL_BLOCK_TITLE = 'to decimal';
+
+Blockly.Msg.DELETE_ALL_BLOCKS = 'Delete All Blocks';

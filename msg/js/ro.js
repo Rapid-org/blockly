@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "În timp ce o valoare este a
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "În timp ce o valoare este adevărat, atunci face unele declaraţii.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Șterge Bloc";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Ștergeți %1 Blocuri";
 Blockly.Msg["DISABLE_BLOCK"] = "Dezactivaţi bloc";

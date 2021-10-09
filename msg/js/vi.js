@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Miễn là điều kiện c�
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Miễn là điều kiện còn đúng, thì thực hiện các lệnh.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Xóa Mảnh Này";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Xóa %1 Mảnh";
 Blockly.Msg["DISABLE_BLOCK"] = "Ngưng Tác Dụng";

@@ -89,7 +89,7 @@ goog.addDependency('../../../../C:/rapid/blockly/core/variables.js', ['Blockly.V
 goog.addDependency('../../../../C:/rapid/blockly/core/warning.js', ['Blockly.Warning'], ['Blockly.Bubble', 'Blockly.Icon']);
 goog.addDependency('../../../../C:/rapid/blockly/core/widgetdiv.js', ['Blockly.WidgetDiv'], ['Blockly.Css', 'goog.dom', 'goog.style']);
 goog.addDependency('../../../../C:/rapid/blockly/core/workspace.js', ['Blockly.Workspace'], ['goog.math']);
-goog.addDependency('../../../../C:/rapid/blockly/core/workspace_svg.js', ['Blockly.WorkspaceSvg'], ['Blockly.ScrollbarPair', 'Blockly.Trashcan', 'Blockly.Workspace', 'Blockly.Xml', 'Blockly.ZoomControls', 'goog.dom', 'goog.math.Coordinate', 'goog.userAgent']);
+goog.addDependency('../../../../C:/rapid/blockly/core/workspace_svg.js', ['Blockly.WorkspaceSvg'], ['Blockly.ScrollbarPair', 'Blockly.Trashcan', 'Blockly.Workspace', 'Blockly.Xml', 'Blockly.ZoomControls', 'goog.dom', 'goog.math.Coordinate', 'goog.userAgent'], {'lang': 'es6'});
 goog.addDependency('../../../../C:/rapid/blockly/core/xml.js', ['Blockly.Xml'], ['goog.dom']);
 goog.addDependency('../../../../C:/rapid/blockly/core/zoom_controls.js', ['Blockly.ZoomControls'], ['goog.dom']);
 goog.addDependency('../../../../C:/rapid/blockly/node_modules/google-closure-library/closure/goog/a11y/aria/announcer.js', ['goog.a11y.aria.Announcer'], ['goog.Disposable', 'goog.Timer', 'goog.a11y.aria', 'goog.a11y.aria.LivePriority', 'goog.a11y.aria.State', 'goog.dom', 'goog.dom.TagName', 'goog.object', 'goog.string'], {'lang': 'es6'});

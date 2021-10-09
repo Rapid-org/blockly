@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "ပေႃးဝႃႈ ၵႃ
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "ပေႃးဝႃႈ ၵႃႈၶၼ် (ၼမ်ႉၵတ်ႉ) မၢၼ်ႇမႅၼ်ႈယဝ်ႉၸိုင် ႁဵတ်းၶေႃႈၵဵပ်းထွၼ်ၵမ်ႈၽွင်ႈ";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "မွတ်ႇပလွၵ်ႉ";
 Blockly.Msg["DELETE_X_BLOCKS"] = "မွတ်ႇပလွၵ်ႉ %1";
 Blockly.Msg["DISABLE_BLOCK"] = "ဢမ်ႇၸၢင်ႈပလွၵ်ႉ";

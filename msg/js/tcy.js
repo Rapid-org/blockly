@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "ಈ ತಿರ್ತ್‍ದ
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "ಈ ತಿರ್ತ್‌ದ ಸರಿ ಇತ್ತ್ಂಡಲಾ, ಬುಕ್ಕೊದ ಕೆಲವು ಹೇಳಿಕೆಲೆನ್ ಮಲ್ಪುಲ";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "ಮಾಜಯರ ತಡೆಯಾತ್ಂಡ್";
 Blockly.Msg["DELETE_X_BLOCKS"] = "ಮಾಜಯರ ಶೇಕಡಾ ೧ ತಡೆಯಾತ್ಂಡ್";
 Blockly.Msg["DISABLE_BLOCK"] = "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಾದ್ ತಡೆಪತ್ತುನೆ";

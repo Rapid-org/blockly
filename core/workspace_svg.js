@@ -763,6 +763,19 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
       toggleOption(false);
     };
     menuOptions.push(expandOption);
+    var deleteOption = {enabled: this.getAllBlocks().length > 0};
+    deleteOption.text = Blockly.Msg.DELETE_ALL_BLOCKS;
+    deleteOption.callback = function() {
+      let blocks = this.getAllBlocks();
+      for (let i in blocks) {
+        let block = blocks[i];
+        Blockly.Events.setGroup(true);
+        Blockly.hideChaff();
+        block.dispose(/* heal */ true, true);
+        Blockly.Events.setGroup(false);
+      }
+    };
+    menuOptions.push(deleteOption);
   }
 
   Blockly.ContextMenu.show(e, menuOptions, this.RTL);

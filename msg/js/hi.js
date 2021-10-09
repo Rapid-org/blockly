@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "जब तक मान फ�
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "जब तक मान ट्रू है, तब तक कुछ स्टेट्मेंट्स चलाएँ।";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "ब्लॉक हटाएँ";
 Blockly.Msg["DELETE_X_BLOCKS"] = "%1 ब्लॉक हटाएँ";
 Blockly.Msg["DISABLE_BLOCK"] = "ब्लॉक को अक्षम करें";

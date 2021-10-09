@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "While a value is false, then
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "While a value is true, then do some statements.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";
 Blockly.Msg["DELETE_BLOCK"] = "Delete Block";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Delete %1 Blocks";
 Blockly.Msg["DISABLE_BLOCK"] = "Disable Block";

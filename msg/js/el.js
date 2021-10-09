@@ -83,6 +83,7 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "Ενόσω μια τιμή �
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "Ενόσω μια τιμή είναι αληθής, τότε εκτελεί κάποιες εντολές.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK"] = "Repeat Unitl";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK"] = "Repeat While";  // untranslated
+Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete All Blocks";  // untranslated
 Blockly.Msg["DELETE_BLOCK"] = "Διέγραψε Το Μπλοκ";
 Blockly.Msg["DELETE_X_BLOCKS"] = "Διέγραψε %1 Μπλοκ";
 Blockly.Msg["DISABLE_BLOCK"] = "Απενεργοποίησε Το Μπλοκ";
