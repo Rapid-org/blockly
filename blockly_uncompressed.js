@@ -22,7 +22,7 @@ this.BLOCKLY_DIR = (function(root) {
 this.BLOCKLY_BOOT = function(root) {
   // Execute after Closure has loaded.
 goog.addDependency('../../../../C:/rapid/blockly/core/block.js', ['Blockly.Block'], ['Blockly.Blocks', 'Blockly.Comment', 'Blockly.Connection', 'Blockly.FieldClickImage', 'Blockly.FieldScopeVariable', 'Blockly.Input', 'Blockly.Mutator', 'Blockly.Warning', 'Blockly.Workspace', 'Blockly.Xml', 'goog.array', 'goog.asserts', 'goog.math.Coordinate', 'goog.string']);
-goog.addDependency('../../../../C:/rapid/blockly/core/block_svg.js', ['Blockly.BlockSvg'], ['Blockly.Block', 'Blockly.ContextMenu', 'Blockly.utils.Timer', 'goog.Timer', 'goog.asserts', 'goog.dom', 'goog.math.Coordinate']);
+goog.addDependency('../../../../C:/rapid/blockly/core/block_svg.js', ['Blockly.BlockSvg'], ['Blockly.Block', 'Blockly.ContextMenu', 'Blockly.utils.Timer', 'goog.Timer', 'goog.asserts', 'goog.dom', 'goog.math.Coordinate'], {'lang': 'es6'});
 goog.addDependency('../../../../C:/rapid/blockly/core/blockly.js', ['Blockly'], ['Blockly.BlockSvg', 'Blockly.FieldAngle', 'Blockly.FieldCheckbox', 'Blockly.FieldColour', 'Blockly.FieldDropdown', 'Blockly.FieldImage', 'Blockly.FieldTextArea', 'Blockly.FieldTextInput', 'Blockly.FieldVariable', 'Blockly.Generator', 'Blockly.Msg', 'Blockly.Procedures', 'Blockly.Realtime', 'Blockly.Toolbox', 'Blockly.TypeBlock', 'Blockly.WidgetDiv', 'Blockly.WorkspaceSvg', 'Blockly.inject', 'Blockly.utils', 'goog.color', 'goog.events.KeyCodes', 'goog.userAgent']);
 goog.addDependency('../../../../C:/rapid/blockly/core/blocks.js', ['Blockly.Blocks'], []);
 goog.addDependency('../../../../C:/rapid/blockly/core/browser_events.js', ['Blockly.browserEvents'], ['Blockly.utils.global']);

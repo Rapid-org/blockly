@@ -544,13 +544,13 @@ Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
       }
       if (this_.workspace.trashcan) {
         // Don't throw an object in the trash can if it just got connected.
-        this_.workspace.trashcan.close();
+        this_.workspace.trashcan.setOpen_(false);
       }
     } else if (!this_.getParent() && Blockly.selected.isDeletable() &&
         this_.workspace.isDeleteArea(e)) {
       var trashcan = this_.workspace.trashcan;
       if (trashcan) {
-        setTimeout(trashcan.close, 100, trashcan);
+        setTimeout(() => trashcan.setOpen_(false), 100, trashcan);
       }
       Blockly.selected.dispose(false, true);
       // Dropping a block on the trash can will usually cause the workspace to

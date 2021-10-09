@@ -248,10 +248,9 @@ Blockly.Trashcan.prototype.getRect = function() {
 /**
  * Flip the lid open or shut.
  * @param {boolean} state True if open.
- * @private
  */
 Blockly.Trashcan.prototype.setOpen_ = function(state) {
-  if (this.isOpen == state) {
+  if (this.isOpen === state) {
     return;
   }
   clearTimeout(this.lidTask_);
