@@ -707,6 +707,7 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
   }
   var menuOptions = [];
   var topBlocks = this.getTopBlocks(true);
+  var allBlocks = this.getAllBlocks(true);
   // Option to clean up blocks.
   var cleanOption = {};
   cleanOption.text = Blockly.Msg.CLEAN_UP;
@@ -766,9 +767,8 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
     var deleteOption = {enabled: this.getAllBlocks().length > 0};
     deleteOption.text = Blockly.Msg.DELETE_ALL_BLOCKS;
     deleteOption.callback = function() {
-      let blocks = this.getAllBlocks();
-      for (let i in blocks) {
-        let block = blocks[i];
+      for (let i in allBlocks) {
+        let block = allBlocks[i];
         Blockly.Events.setGroup(true);
         Blockly.hideChaff();
         block.dispose(/* heal */ true, true);
