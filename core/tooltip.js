@@ -236,8 +236,10 @@ Blockly.Tooltip.show_ = function() {
   goog.dom.removeChildren(/** @type {!Element} */ (Blockly.Tooltip.DIV));
   // Get the new text.
   var tip = Blockly.Tooltip.element_.tooltip;
+  console.log(tip);
   if (typeof tip === "function") {
     tip = tip();
+    console.log(tip);
   }
   tip = Blockly.Tooltip.wrap_(tip, Blockly.Tooltip.LIMIT);
   // Create new text, line by line.
