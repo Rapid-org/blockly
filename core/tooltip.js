@@ -235,7 +235,7 @@ Blockly.Tooltip.show_ = function() {
   // Erase all existing text.
   goog.dom.removeChildren(/** @type {!Element} */ (Blockly.Tooltip.DIV));
   // Get the new text.
-  var tip = Blockly.Tooltip.element_.tooltip;
+  var tip = Blockly.Tooltip.element_.tooltip.tooltip;
   console.log(tip);
   if (typeof tip === "function") {
     tip = tip();
