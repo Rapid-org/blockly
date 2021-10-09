@@ -550,7 +550,7 @@ Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
         this_.workspace.isDeleteArea(e)) {
       var trashcan = this_.workspace.trashcan;
       if (trashcan) {
-        Blockly.utils.Timer.callOnce(trashcan.close, 100, trashcan);
+        setTimeout(trashcan.close, 100, trashcan);
       }
       Blockly.selected.dispose(false, true);
       // Dropping a block on the trash can will usually cause the workspace to
