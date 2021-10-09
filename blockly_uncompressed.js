@@ -22,7 +22,7 @@ this.BLOCKLY_DIR = (function(root) {
 this.BLOCKLY_BOOT = function(root) {
   // Execute after Closure has loaded.
 goog.addDependency('../../../../C:/rapid/blockly/core/block.js', ['Blockly.Block'], ['Blockly.Blocks', 'Blockly.Comment', 'Blockly.Connection', 'Blockly.FieldClickImage', 'Blockly.FieldScopeVariable', 'Blockly.Input', 'Blockly.Mutator', 'Blockly.Warning', 'Blockly.Workspace', 'Blockly.Xml', 'goog.array', 'goog.asserts', 'goog.math.Coordinate', 'goog.string']);
-goog.addDependency('../../../../C:/rapid/blockly/core/block_svg.js', ['Blockly.BlockSvg'], ['Blockly.Block', 'Blockly.ContextMenu', 'goog.Timer', 'goog.asserts', 'goog.dom', 'goog.math.Coordinate']);
+goog.addDependency('../../../../C:/rapid/blockly/core/block_svg.js', ['Blockly.BlockSvg'], ['Blockly.Block', 'Blockly.ContextMenu', 'Blockly.utils.Timer', 'goog.Timer', 'goog.asserts', 'goog.dom', 'goog.math.Coordinate']);
 goog.addDependency('../../../../C:/rapid/blockly/core/blockly.js', ['Blockly'], ['Blockly.BlockSvg', 'Blockly.FieldAngle', 'Blockly.FieldCheckbox', 'Blockly.FieldColour', 'Blockly.FieldDropdown', 'Blockly.FieldImage', 'Blockly.FieldTextArea', 'Blockly.FieldTextInput', 'Blockly.FieldVariable', 'Blockly.Generator', 'Blockly.Msg', 'Blockly.Procedures', 'Blockly.Realtime', 'Blockly.Toolbox', 'Blockly.TypeBlock', 'Blockly.WidgetDiv', 'Blockly.WorkspaceSvg', 'Blockly.inject', 'Blockly.utils', 'goog.color', 'goog.events.KeyCodes', 'goog.userAgent']);
 goog.addDependency('../../../../C:/rapid/blockly/core/blocks.js', ['Blockly.Blocks'], []);
 goog.addDependency('../../../../C:/rapid/blockly/core/browser_events.js', ['Blockly.browserEvents'], ['Blockly.utils.global']);
@@ -55,7 +55,7 @@ goog.addDependency('../../../../C:/rapid/blockly/core/interfaces/registry.js', [
 goog.addDependency('../../../../C:/rapid/blockly/core/menu.js', ['Blockly.Menu'], ['Blockly.browserEvents', 'Blockly.utils.Coordinate', 'Blockly.utils.KeyCodes', 'Blockly.utils.aria', 'Blockly.utils.dom', 'Blockly.utils.style']);
 goog.addDependency('../../../../C:/rapid/blockly/core/menuitem.js', ['Blockly.MenuItem'], ['Blockly.utils.IdGenerator', 'Blockly.utils.aria', 'Blockly.utils.dom']);
 goog.addDependency('../../../../C:/rapid/blockly/core/msg.js', ['Blockly.Msg'], []);
-goog.addDependency('../../../../C:/rapid/blockly/core/mutator.js', ['Blockly.Mutator'], ['Blockly.Bubble', 'Blockly.Icon', 'Blockly.WorkspaceSvg', 'goog.Timer', 'goog.dom']);
+goog.addDependency('../../../../C:/rapid/blockly/core/mutator.js', ['Blockly.Mutator'], ['Blockly.Bubble', 'Blockly.Icon', 'Blockly.WorkspaceSvg', 'Blockly.utils.Timer', 'goog.Timer', 'goog.dom']);
 goog.addDependency('../../../../C:/rapid/blockly/core/names.js', ['Blockly.Names'], []);
 goog.addDependency('../../../../C:/rapid/blockly/core/procedures.js', ['Blockly.Procedures'], ['Blockly.Field', 'Blockly.Names', 'Blockly.Workspace', 'Blockly.constants']);
 goog.addDependency('../../../../C:/rapid/blockly/core/realtime-client-utils.js', ['rtclient'], []);

@@ -32,6 +32,7 @@ goog.require('Blockly.Icon');
 goog.require('Blockly.WorkspaceSvg');
 goog.require('goog.Timer');
 goog.require('goog.dom');
+goog.require('Blockly.utils.Timer');
 
 
 /**
