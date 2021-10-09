@@ -65,7 +65,7 @@ goog.addDependency('../../../../C:/rapid/blockly/core/scopevariables.js', ['Bloc
 goog.addDependency('../../../../C:/rapid/blockly/core/scrollbar.js', ['Blockly.Scrollbar', 'Blockly.ScrollbarPair'], ['goog.dom', 'goog.events']);
 goog.addDependency('../../../../C:/rapid/blockly/core/toolbox.js', ['Blockly.Toolbox'], ['Blockly.Flyout', 'goog.dom', 'goog.events', 'goog.events.BrowserFeature', 'goog.html.SafeHtml', 'goog.math.Rect', 'goog.style', 'goog.ui.tree.TreeControl', 'goog.ui.tree.TreeNode']);
 goog.addDependency('../../../../C:/rapid/blockly/core/tooltip.js', ['Blockly.Tooltip'], ['goog.dom']);
-goog.addDependency('../../../../C:/rapid/blockly/core/trashcan.js', ['Blockly.Trashcan'], ['goog.dom', 'goog.math', 'goog.math.Rect'], {'lang': 'es6'});
+goog.addDependency('../../../../C:/rapid/blockly/core/trashcan.js', ['Blockly.Trashcan'], ['goog.dom', 'goog.math', 'goog.math.Rect']);
 goog.addDependency('../../../../C:/rapid/blockly/core/typeIndicator.js', [], []);
 goog.addDependency('../../../../C:/rapid/blockly/core/typeblock.js', ['Blockly.TypeBlock', 'Blockly.TypeBlock.ac.AIArrayMatcher'], ['Blockly.Xml', 'goog.events', 'goog.events.KeyCodes', 'goog.events.KeyHandler', 'goog.iter', 'goog.string', 'goog.string', 'goog.style', 'goog.ui.ac', 'goog.ui.ac.ArrayMatcher', 'goog.ui.ac.AutoComplete', 'goog.ui.ac.InputHandler', 'goog.ui.ac.Renderer']);
 goog.addDependency('../../../../C:/rapid/blockly/core/utils.js', ['Blockly.utils'], ['goog.dom', 'goog.events.BrowserFeature', 'goog.math.Coordinate', 'goog.userAgent']);
