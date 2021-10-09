@@ -769,10 +769,7 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
     deleteOption.callback = function() {
       for (let i in allBlocks) {
         let block = allBlocks[i];
-        Blockly.Events.setGroup(true);
-        Blockly.hideChaff();
-        block.dispose(/* heal */ true, true);
-        Blockly.Events.setGroup(false);
+        block.dispose(/* heal */ true);
       }
     };
     menuOptions.push(deleteOption);
