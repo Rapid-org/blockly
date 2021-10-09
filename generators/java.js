@@ -359,9 +359,7 @@ Blockly.Java.setGlobalVar = function(block,name,val) {
 Blockly.Java.GetVariableType = function(name) {
   var type = this.variableTypes_[name];
   if (!type) {
-//    type = 'String';
     type = 'Object';
-    Blockly.Java.provideVarClass();
   }
   return type;
 };
