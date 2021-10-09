@@ -291,6 +291,7 @@ Blockly.Tooltip.show_ = function() {
  * @private
  */
 Blockly.Tooltip.wrap_ = function(text, limit) {
+  console.log(text);
   if (!text) {
     return text;
   }
@@ -298,6 +299,7 @@ Blockly.Tooltip.wrap_ = function(text, limit) {
     // Short text, no need to wrap.
     return text;
   }
+  console.log(text);
   // Split the text into words.
   var words = text.trim().split(/\s+/);
   // Set limit to be the length of the largest word.
