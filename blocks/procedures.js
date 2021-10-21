@@ -599,7 +599,11 @@ Blockly.Blocks['procedures_defreturn'] = {
         .appendField('Returns: ')
         .appendField(new Blockly.FieldDropdown([
           ['String', 'STRING'],
-          ['Number', 'NUMBER']
+          ['Number', 'NUMBER'],
+          ['Map', 'MAP'],
+          ['Array', 'ARRAY'],
+          ['Colour', 'COLOUR'],
+          ['Boolean', 'BOOLEAN']
         ]), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);

@@ -45,17 +45,14 @@ Blockly.Java['procedures_defreturn'] = function(block) {
  }
  var retType = 'void';
  if (this.hasReturnValue_) {
-   retType = Blockly.Java.GetVariableType(funcPrefix + '.');
+   retType = getJavaType(block.getFieldValue('PROCEDURE_RETURN_TYPE'));
+   console.log(retType);
  }
 
  var returnValue = Blockly.Java.valueToCode(block, 'RETURN',
      Blockly.Java.ORDER_NONE) || '';
  if (returnValue) {
-   if (retType === 'Var') {
-     returnValue = '  return Var.valueOf(' + returnValue + ');\n';
-   } else {
-     returnValue = '  return ' + returnValue + ';\n';
-   }
+   returnValue = '  return ' + returnValue + ';\n';
  } else if (!branch) {
    branch = Blockly.Java.PASS;
  }
@@ -76,6 +73,25 @@ Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleFunc
  Blockly.Java.definitions_[funcName] = code;
   return null;
 };
+
+function getJavaType(type) {
+    type = type.toLowerCase();
+    if (type === 'string') {
+        return 'String';
+    }
+    if (type === 'number') {
+        return 'double';
+    }
+    if (type === 'array') {
+        return 'YailList';
+    }
+    if (type === 'boolean') {
+        return 'boolean';
+    }
+    if (type === 'colour') {
+        return 'String';
+    }
+}
 
 // Defining a procedure without a return value uses the same generator as
 // a procedure with a return value.
@@ -98,9 +114,10 @@ Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
         '"' + block.id + '"') + branch;
   }
   var retType = 'void';
-  if (this.hasReturnValue_) {
-    retType = Blockly.Java.GetVariableType(funcPrefix + '.');
-  }
+    if (this.hasReturnValue_) {
+        retType = getJavaType(block.getFieldValue('PROCEDURE_RETURN_TYPE'));
+        console.log(retType);
+    }
 
   var returnValue = Blockly.Java.valueToCode(block, 'RETURN',
       Blockly.Java.ORDER_NONE) || '';
