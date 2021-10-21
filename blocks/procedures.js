@@ -670,6 +670,15 @@ Blockly.Blocks['procedures_deffunctionreturn'] = {
     this.appendValueInput('RETURN')
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
+    this.appendDummyInput()
+        .appendField('Returns: ')
+        .appendField(new Blockly.FieldDropdown([
+          ['String', 'STRING'],
+          ['Number', 'NUMBER'],
+          ['Array', 'ARRAY'],
+          ['Colour', 'COLOUR'],
+          ['Boolean', 'BOOLEAN']
+        ]), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [];
