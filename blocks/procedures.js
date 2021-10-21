@@ -197,7 +197,7 @@ Blockly.Blocks['procedures_defnoreturn'] = {
           subField.setChangeHandler(this.doRemoveField);
         }
 
-        var typeField = this.getField(typeFieldText);
+        const typeField = this.getField(typeFieldText);
         if (typeField != null) {
           typeField.setSerializable(false);
           typeField.setChangeHandler(this.updateType);
@@ -206,9 +206,9 @@ Blockly.Blocks['procedures_defnoreturn'] = {
             Blockly.Msg.PROCEDURES_NEWTYPETITLE);
           typeField.argPos_ = i;
           typeField.setMsgEmpty('Any');
-          var type = this.arguments_[i]['type'];
+          let type = this.arguments_[i]['type'];
           if (!type) {
-            type = '';
+            type = 'Any';
           }
           typeField.setValue(type);
         }
@@ -595,6 +595,12 @@ Blockly.Blocks['procedures_defreturn'] = {
     this.appendValueInput('RETURN')
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
+    this.appendDummyInput()
+        .appendField('Returns: ')
+        .appendField(new Blockly.FieldDropdown([
+          ['String', 'STRING'],
+          ['Number', 'NUMBER']
+        ]), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [];
