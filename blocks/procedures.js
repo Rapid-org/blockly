@@ -593,6 +593,28 @@ Blockly.Blocks['procedures_defreturn'] = {
         .appendField(nameField, 'NAME')
         .appendField(addField, addName);
     this.appendValueInput('RETURN')
+        .setCheck(() => {
+          return this.getFieldValue("PROCEDURE_RETURN_TYPE");
+          function getBlocklyType(type) {
+            type = type.toLowerCase();
+            if (type === 'string') {
+              return 'String';
+            }
+            if (type === 'number') {
+              return 'Number';
+            }
+            if (type === 'array') {
+              return 'Array';
+            }
+            if (type === 'colour') {
+              return 'String';
+            }
+            if (type === 'boolean') {
+              return 'Boolean';
+            }
+            return null;
+          }
+        })
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
     this.appendDummyInput()
@@ -600,7 +622,6 @@ Blockly.Blocks['procedures_defreturn'] = {
         .appendField(new Blockly.FieldDropdown([
           ['String', 'STRING'],
           ['Number', 'NUMBER'],
-          ['Map', 'MAP'],
           ['Array', 'ARRAY'],
           ['Colour', 'COLOUR'],
           ['Boolean', 'BOOLEAN']

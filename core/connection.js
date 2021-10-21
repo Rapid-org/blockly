@@ -625,7 +625,7 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
   }
   // Find any intersection in the check lists.
   for (var i = 0; i < this.check_.length; i++) {
-    if (otherConnection.check_.indexOf(this.check_[i]) != -1) {
+    if (otherConnection.check_.indexOf(this.check_[i]) !== -1) {
       return true;
     }
   }
@@ -644,7 +644,10 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
 Blockly.Connection.prototype.setCheck = function(check,requireType) {
   if (check) {
     // Ensure that check is in an array.
-    if (!typeof check === "array") {
+    if (typeof  check === "function") {
+      check = check();
+    }
+    if (!(typeof check === "array")) {
       check = [check];
     }
     this.check_ = check;
