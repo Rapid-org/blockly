@@ -598,23 +598,27 @@ Blockly.Blocks['procedures_defreturn'] = {
           console.log(getBlocklyType(this.getFieldValue("PROCEDURE_RETURN_TYPE")));
           return getBlocklyType(this.getFieldValue("PROCEDURE_RETURN_TYPE"));
           function getBlocklyType(type) {
-            type = type.toLowerCase();
-            if (type === 'string') {
-              return 'String';
+            if (type) {
+              type = type.toLowerCase();
+              if (type === 'string') {
+                return 'String';
+              }
+              if (type === 'number') {
+                return 'Number';
+              }
+              if (type === 'array') {
+                return 'Array';
+              }
+              if (type === 'colour') {
+                return 'String';
+              }
+              if (type === 'boolean') {
+                return 'Boolean';
+              }
+              return null;
+            } else {
+              return null;
             }
-            if (type === 'number') {
-              return 'Number';
-            }
-            if (type === 'array') {
-              return 'Array';
-            }
-            if (type === 'colour') {
-              return 'String';
-            }
-            if (type === 'boolean') {
-              return 'Boolean';
-            }
-            return null;
           }
         })
         .setAlign(Blockly.ALIGN_RIGHT)
