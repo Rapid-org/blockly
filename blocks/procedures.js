@@ -594,6 +594,8 @@ Blockly.Blocks['procedures_defreturn'] = {
         .appendField(addField, addName);
     this.appendValueInput('RETURN')
         .setCheck(() => {
+          console.log(this.getFieldValue("PROCEDURE_RETURN_TYPE"));
+          console.log(getBlocklyType(this.getFieldValue("PROCEDURE_RETURN_TYPE")));
           return getBlocklyType(this.getFieldValue("PROCEDURE_RETURN_TYPE"));
           function getBlocklyType(type) {
             type = type.toLowerCase();
