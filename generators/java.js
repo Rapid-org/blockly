@@ -695,7 +695,7 @@ Blockly.Java.finish = function(code) {
       var res1 = def.split("(", 2);
       if ((res1.length >= 2) && (res1[0].indexOf(";") ===-1)) {
         // Figure out the header to put on the function
-        var header = '/**\n' +
+        var header = '  /**\n' +
             ' * Description goes here\n';
         var extra =  ' *\n';
         var res = res1[0];  // Get everything before the (

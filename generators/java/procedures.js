@@ -122,11 +122,7 @@ Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
   var returnValue = Blockly.Java.valueToCode(block, 'RETURN',
       Blockly.Java.ORDER_NONE) || '';
   if (returnValue) {
-    if (retType === 'Var') {
-      returnValue = '  return Var.valueOf(' + returnValue + ');\n';
-    } else {
-      returnValue = '  return ' + returnValue + ';\n';
-    }
+    returnValue = '    return ' + returnValue + ';\n';
   } else if (!branch) {
     branch = Blockly.Java.PASS;
   }
@@ -139,9 +135,9 @@ Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
                                                Blockly.Variables.NAME_TYPE);
   }
 
-  var code = '@SimpleFunction\npublic ' + retType + ' ' +
-              funcName + '(' + args.join(', ') + '){\n' +
-             branch + returnValue + "}";
+  var code = '  @SimpleFunction\n  public ' + retType + ' ' +
+              funcName + '(' + args.join(', ') + ') {\n' +
+             branch + returnValue + "  }";
 Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleFunction");
   code = Blockly.Java.scrub_(block, code);
   Blockly.Java.definitions_[funcName] = code;

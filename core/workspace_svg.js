@@ -764,12 +764,17 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
       toggleOption(false);
     };
     menuOptions.push(expandOption);
-    var deleteOption = {enabled: this.getAllBlocks().length > 0};
-    deleteOption.text = Blockly.Msg.DELETE_ALL_BLOCKS;
+
+    const deleteOption = {enabled: allBlocks.length > 0};
+    if (allBlocks.length > 1) {
+      deleteOption.text = Blockly.Msg.DELETE_ALL_BLOCKS.replaceAll("%1", allBlocks.length);
+    } else {
+      deleteOption.text = Blockly.Msg.DELETE_BLOCK;
+    }
     deleteOption.callback = function() {
       for (let i in allBlocks) {
         let block = allBlocks[i];
-        block.dispose(/* heal */ true);
+        block.dispose(/* heal */ true, true);
       }
     };
     menuOptions.push(deleteOption);
