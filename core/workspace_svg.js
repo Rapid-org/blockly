@@ -767,7 +767,7 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
 
     const deleteOption = {enabled: allBlocks.length > 0};
     if (allBlocks.length > 1) {
-      deleteOption.text = Blockly.Msg.DELETE_ALL_BLOCKS.replaceAll("%1", allBlocks.length);
+      deleteOption.text = Blockly.Msg.DELETE_X_BLOCKS.replaceAll("%1", allBlocks.length);
     } else {
       deleteOption.text = Blockly.Msg.DELETE_BLOCK;
     }
