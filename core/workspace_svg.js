@@ -778,6 +778,12 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
       }
     };
     menuOptions.push(deleteOption);
+    const importClassOption = {enabled: true};
+    importClassOption.text = Blockly.Msg.IMPORT_CLASS;
+    importClassOption.callback = function() {
+      window.top['openImportClassDialog']();
+    };
+    menuOptions.push(importClassOption);
   }
 
   Blockly.ContextMenu.show(e, menuOptions, this.RTL);
