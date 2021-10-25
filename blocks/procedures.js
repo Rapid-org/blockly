@@ -1197,6 +1197,25 @@ Blockly.Blocks['procedures_callfunctionreturn'] = {
   customContextMenu: Blockly.Blocks['procedures_callnoreturn'].customContextMenu
 };
 
+Blockly.Blocks['procedures_callmethodnoreturn'] = {
+  /**
+   * Block for calling a procedure with a return value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL);
+    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.appendDummyInput('TOPROW')
+        .appendField(Blockly.Msg.PROCEDURES_CALLRETURN_CALL)
+        .appendField('', 'NAME');
+    // Tooltip is set in domToMutation.
+    this.setOutput(true);
+    this.arguments_ = [];
+    this.quarkConnections_ = {};
+    this.quarkArguments_ = null;
+  }
+};
+
 Blockly.Blocks['procedures_ifreturn'] = {
   /**
    * Block for conditionally returning a value from a procedure.
