@@ -792,11 +792,14 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
             window.top['openImportClassDialog']();
         };
         menuOptions.push(importClassOption);
-    }
-
-    // Allow the developer to add or modify menuOptions.
-    if (this.configureContextMenu) {
-        this.configureContextMenu(menuOptions, e);
+        var screenshotOption = {
+            text: 'Download Screenshot',
+            enabled: workspace.getTopBlocks().length,
+            callback: function() {
+                Blockly.downloadScreenshot(workspace);
+            }
+        };
+        menuOptions.push(screenshotOption);
     }
 
     Blockly.ContextMenu.show(e, menuOptions, this.RTL);
