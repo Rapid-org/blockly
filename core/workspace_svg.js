@@ -37,6 +37,7 @@ goog.require('Blockly.Xml');
 goog.require('goog.dom');
 goog.require('goog.math.Coordinate');
 goog.require('goog.userAgent');
+goog.require('goog.math.Rect');
 
 
 /**
@@ -122,6 +123,13 @@ Blockly.WorkspaceSvg.prototype.startScrollY = 0;
  * @private
  */
 Blockly.WorkspaceSvg.prototype.dragDeltaX_ = 0;
+
+/**
+ * The list of top-level bounded elements on the workspace.
+ * @type {!Array<!Blockly.IBoundedElement>}
+ * @private
+ */
+this.topBoundedElements_ = [];
 
 /**
  * Vertical distance from mouse to object being dragged.
@@ -226,6 +234,7 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
  * Unlink from all DOM elements to prevent memory leaks.
  */
 Blockly.WorkspaceSvg.prototype.dispose = function() {
+    this.topBoundedElements_ = [];
     // Stop rerendering.
     this.rendered = false;
     Blockly.unbindEvent_(this.eventWrappers_);
@@ -331,6 +340,22 @@ Blockly.WorkspaceSvg.prototype.resize = function() {
 };
 
 /**
+ * Adds a bounded element to the list of top bounded elements.
+ * @param {!Blockly.IBoundedElement} element Bounded element to add.
+ */
+Blockly.WorkspaceSvg.prototype.addTopBoundedElement = function(element) {
+    this.topBoundedElements_.push(element);
+};
+
+/**
+ * Removes a bounded element from the list of top bounded elements.
+ * @param {!Blockly.IBoundedElement} element Bounded element to remove.
+ */
+Blockly.WorkspaceSvg.prototype.removeTopBoundedElement = function(element) {
+    Blockly.utils.arrayRemove(this.topBoundedElements_, element);
+};
+
+/**
  * Get the SVG element that forms the drawing surface.
  * @return {!Element} SVG element.
  */
@@ -363,6 +388,7 @@ Blockly.WorkspaceSvg.prototype.translate = function(x, y) {
  * @param {!Blockly.Block} block Block to remove.
  */
 Blockly.WorkspaceSvg.prototype.addTopBlock = function(block) {
+    this.addTopBoundedElement( /** @type {!Blockly.BlockSvg} */ (block));
     Blockly.WorkspaceSvg.superClass_.addTopBlock.call(this, block);
     if (Blockly.Realtime.isEnabled() && !this.options.parentWorkspace) {
         Blockly.Realtime.addTopBlock(block);
@@ -375,6 +401,9 @@ Blockly.WorkspaceSvg.prototype.addTopBlock = function(block) {
  */
 Blockly.WorkspaceSvg.prototype.removeTopBlock = function(block) {
     Blockly.WorkspaceSvg.superClass_.removeTopBlock.call(this, block);
+    this.removeTopBoundedElement(
+        /** @type {!Blockly.WorkspaceCommentSvg} */
+        (comment));
     if (Blockly.Realtime.isEnabled() && !this.options.parentWorkspace) {
         Blockly.Realtime.removeTopBlock(block);
     }
@@ -1136,6 +1165,54 @@ Blockly.WorkspaceSvg.prototype.updateGridPattern_ = function() {
         line2.setAttribute('x2', half);
         line2.setAttribute('y2', end);
     }
+};
+
+/**
+ * Finds the top-level bounded elements and returns them.
+ * @return {!Array<!Blockly.IBoundedElement>} The top-level bounded elements.
+ */
+Blockly.WorkspaceSvg.prototype.getTopBoundedElements = function() {
+    return [].concat(this.topBoundedElements_);
+};
+
+/**
+ * Calculate the bounding box for the blocks on the workspace.
+ * Coordinate system: workspace coordinates.
+ *
+ * @return {!Blockly.utils.Rect} Contains the position and size of the
+ *   bounding box containing the blocks on the workspace.
+ */
+Blockly.WorkspaceSvg.prototype.getBlocksBoundingBox = function() {
+    var topElements = this.getTopBoundedElements();
+    // There are no blocks, return empty rectangle.
+    if (!topElements.length) {
+        return new goog.math.Rect(0, 0, 0, 0);
+    }
+
+    // Initialize boundary using the first block.
+    var boundary = topElements[0].getBoundingRectangle();
+
+    // Start at 1 since the 0th block was used for initialization.
+    for (var i = 1; i < topElements.length; i++) {
+        var topElement = topElements[i];
+        if (topElement.isInsertionMarker && topElement.isInsertionMarker()) {
+            continue;
+        }
+        var blockBoundary = topElement.getBoundingRectangle();
+        if (blockBoundary.top < boundary.top) {
+            boundary.top = blockBoundary.top;
+        }
+        if (blockBoundary.bottom > boundary.bottom) {
+            boundary.bottom = blockBoundary.bottom;
+        }
+        if (blockBoundary.left < boundary.left) {
+            boundary.left = blockBoundary.left;
+        }
+        if (blockBoundary.right > boundary.right) {
+            boundary.right = blockBoundary.right;
+        }
+    }
+    return boundary;
 };
 
 // Export symbols that would otherwise be renamed by Closure compiler.
