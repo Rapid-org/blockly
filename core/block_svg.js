@@ -32,6 +32,7 @@ goog.require('goog.Timer');
 goog.require('goog.asserts');
 goog.require('goog.dom');
 goog.require('goog.math.Coordinate');
+goog.require('goog.math.Rect');
 goog.require('Blockly.utils.Timer');
 
 var numberArgumentsForBlock = 2;
@@ -327,7 +328,7 @@ Blockly.BlockSvg.prototype.moveBy = function(dx, dy) {
  * Returns the coordinates of a bounding box describing the dimensions of this
  * block and any blocks stacked below it.
  * Coordinate system: workspace coordinates.
- * @return {!Blockly.utils.Rect} Object with coordinates of the bounding box.
+ * @return {!goog.math.Rect} Object with coordinates of the bounding box.
  */
 Blockly.BlockSvg.prototype.getBoundingRectangle = function() {
     var blockXY = this.getRelativeToSurfaceXY();
@@ -340,7 +341,7 @@ Blockly.BlockSvg.prototype.getBoundingRectangle = function() {
         left = blockXY.x;
         right = blockXY.x + blockBounds.width;
     }
-    return new Blockly.utils.Rect(
+    return new goog.math.Rect(
         blockXY.y, blockXY.y + blockBounds.height, left, right);
 };
 
