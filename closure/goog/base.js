@@ -334,7 +334,7 @@ goog.isDefAndNotNull = function(val) {
  */
 goog.findBasePath_ = function() {
     /** @type {!Document} */
-    var doc = goog.global.document;
+    var doc = window.document;
     // If we have a currentScript available, use it exclusively.
     var currentScript = doc.currentScript;
     if (currentScript) {
