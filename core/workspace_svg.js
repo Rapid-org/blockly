@@ -794,9 +794,9 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
         menuOptions.push(importClassOption);
         var screenshotOption = {
             text: 'Download Screenshot',
-            enabled: workspace.getTopBlocks().length,
-            callback: function() {
-                Blockly.downloadScreenshot(workspace);
+            enabled: this.getTopBlocks().length,
+            callback: () => {
+                Blockly.downloadScreenshot(this);
             }
         };
         menuOptions.push(screenshotOption);
