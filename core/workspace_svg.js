@@ -68,6 +68,13 @@ Blockly.WorkspaceSvg = function(options) {
      */
     this.eventWrappers_ = [];
 
+    /**
+     * The list of top-level bounded elements on the workspace.
+     * @type {!Array<!Blockly.IBoundedElement>}
+     * @private
+     */
+    this.topBoundedElements_ = [];
+
     this.registerToolboxCategoryCallback(Blockly.VARIABLE_CATEGORY_NAME,
         Blockly.Variables.flyoutCategory);
     this.registerToolboxCategoryCallback(Blockly.PROCEDURE_CATEGORY_NAME,
@@ -123,13 +130,6 @@ Blockly.WorkspaceSvg.prototype.startScrollY = 0;
  * @private
  */
 Blockly.WorkspaceSvg.prototype.dragDeltaX_ = 0;
-
-/**
- * The list of top-level bounded elements on the workspace.
- * @type {!Array<!Blockly.IBoundedElement>}
- * @private
- */
-this.topBoundedElements_ = [];
 
 /**
  * Vertical distance from mouse to object being dragged.
