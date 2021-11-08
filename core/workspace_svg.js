@@ -401,9 +401,6 @@ Blockly.WorkspaceSvg.prototype.addTopBlock = function(block) {
  */
 Blockly.WorkspaceSvg.prototype.removeTopBlock = function(block) {
     Blockly.WorkspaceSvg.superClass_.removeTopBlock.call(this, block);
-    this.removeTopBoundedElement(
-        /** @type {!Blockly.WorkspaceCommentSvg} */
-        (comment));
     if (Blockly.Realtime.isEnabled() && !this.options.parentWorkspace) {
         Blockly.Realtime.removeTopBlock(block);
     }
