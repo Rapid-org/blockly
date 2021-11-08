@@ -347,6 +347,8 @@ Blockly.Msg.LOGIC_NULL_TOOLTIP = 'Returns null.';
 /// typeblock - Typing to add the block
 Blockly.Msg.LOGIC_NULL_TYPEBLOCK = 'Null';
 
+Blockly.Msg.LOGIC_THIS_TYPEBLOCK = 'This';
+
 /// url - Describes the programming language operator known as the ''ternary'' or ''conditional'' operator.  It is recommended that you use the translation of [https://en.wikipedia.org/wiki/%3F: https://en.wikipedia.org/wiki/%3F:] if it exists.
 Blockly.Msg.LOGIC_TERNARY_HELPURL = 'https://en.wikipedia.org/wiki/%3F:';
 /// block input text - Label for the input whose value determines which of the other two inputs is returned.  In some programming languages, this is called a ''''predicate''''.
@@ -488,7 +490,7 @@ Blockly.Msg.MATH_CONSTANT_TOOLTIP = 'Return one of the common constants: π (3.1
 Blockly.Msg.MATH_CONSTANT_PI_TYPEBLOCK = 'Constant PI';
 /// Typeblock - Autocomplete for typeblocking
 Blockly.Msg.MATH_CONSTANT_E_TYPEBLOCK = 'Constant E'
-/// Typeblock - Autocomplete for typeblocking
+    /// Typeblock - Autocomplete for typeblocking
 Blockly.Msg.MATH_CONSTANT_GOLDEN_RATIO_TYPEBLOCK = 'Constant Golden Ratio (φ)';
 /// Typeblock - Autocomplete for typeblocking
 Blockly.Msg.MATH_CONSTANT_SQRT2_TYPEBLOCK = 'Constant √ 2';
@@ -966,7 +968,7 @@ Blockly.Msg.TEXT_PRINTF_TITLE = 'printf format %1';
 Blockly.Msg.TEXT_PRINTF_TOOLTIP = 'Printf the specified text, number or other value.';
 /// Typeblock - Autocomplete for typeblocking
 Blockly.Msg.TEXT_PRINTF_TYPEBLOCK = 'Printf Text';
-Blockly.Msg.TEXT_PRINTF_CREATEWITH ='create text with';
+Blockly.Msg.TEXT_PRINTF_CREATEWITH = 'create text with';
 
 
 /// url - Information about displaying text on computers.
@@ -981,7 +983,7 @@ Blockly.Msg.TEXT_SPRINTF_TITLE = 'sprintf format %1';
 Blockly.Msg.TEXT_SPRINTF_TOOLTIP = 'Sprintf the specified text, number or other value.';
 /// Typeblock - Autocomplete for typeblocking
 Blockly.Msg.TEXT_SPRINTF_TYPEBLOCK = 'Sprintf Text';
-Blockly.Msg.TEXT_SPRINTF_CREATEWITH ='create text with';
+Blockly.Msg.TEXT_SPRINTF_CREATEWITH = 'create text with';
 
 /// url - Information about getting text from users.
 Blockly.Msg.TEXT_PROMPT_HELPURL = 'https://github.com/google/blockly/wiki/Text#getting-input-from-the-user';
@@ -1483,9 +1485,9 @@ Blockly.Msg.MAPS_SET_INDEX_TYPEBLOCK = 'Set Item at Position in Map';
 Blockly.Msg.MAPS_KEYS_TITLE = 'get keys of %1';
 /// tooltip -
 Blockly.Msg.MAPS_KEYS_TOOLTIP
-/// url - Information about putting items in Maps.
+    /// url - Information about putting items in Maps.
 Blockly.Msg.MAPS_KEYS_HELPURL
-/// typeblock - Typing to add the block
+    /// typeblock - Typing to add the block
 Blockly.Msg.MAPS_KEYS_TYPEBLOCK = 'Get Keys of Map';
 
 /// grammar - Text that follows an ordinal number (a number that indicates
@@ -1662,3 +1664,5 @@ Blockly.Msg.COLOUR_HEX = 'hex';
 Blockly.Msg.COLOUR_TO_DECIMAL_BLOCK_TITLE = 'to decimal';
 
 Blockly.Msg.DELETE_ALL_BLOCKS = 'Delete All Blocks';
+
+Blockly.Msg.LOGIC_THIS = 'Delete All Blocks';

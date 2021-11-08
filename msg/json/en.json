@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-11-08 19:56:58.174000",
+		"lastupdated": "2021-11-08 20:10:31.608000",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -132,6 +132,7 @@
 	"LOGIC_NULL": "null",
 	"LOGIC_NULL_TOOLTIP": "Returns null.",
 	"LOGIC_NULL_TYPEBLOCK": "Null",
+	"LOGIC_THIS_TYPEBLOCK": "This",
 	"LOGIC_TERNARY_HELPURL": "https://en.wikipedia.org/wiki/%3F:",
 	"LOGIC_TERNARY_CONDITION": "test",
 	"LOGIC_TERNARY_IF_TRUE": "if true",
@@ -592,5 +593,6 @@
 	"COLOUR_HEX_TO_DECIMAL_TYPEBLOCK": "to decimal",
 	"COLOUR_HEX": "hex",
 	"COLOUR_TO_DECIMAL_BLOCK_TITLE": "to decimal",
-	"DELETE_ALL_BLOCKS": "Delete All Blocks"
+	"DELETE_ALL_BLOCKS": "Delete All Blocks",
+	"LOGIC_THIS": "Delete All Blocks"
 }

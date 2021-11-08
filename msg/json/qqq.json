@@ -126,6 +126,7 @@
 	"LOGIC_NULL": "block text - In computer languages, ''null'' is a special value that indicates that no value has been set.  You may use your language's word for 'nothing' or 'invalid'.",
 	"LOGIC_NULL_TOOLTIP": "tooltip - This should use the word from the previous message.",
 	"LOGIC_NULL_TYPEBLOCK": "typeblock - Typing to add the block",
+	"LOGIC_THIS_TYPEBLOCK": "",
 	"LOGIC_TERNARY_HELPURL": "url - Describes the programming language operator known as the ''ternary'' or ''conditional'' operator.  It is recommended that you use the translation of [https://en.wikipedia.org/wiki/%3F: https://en.wikipedia.org/wiki/%3F:] if it exists.",
 	"LOGIC_TERNARY_CONDITION": "block input text - Label for the input whose value determines which of the other two inputs is returned.  In some programming languages, this is called a ''''predicate''''.",
 	"LOGIC_TERNARY_IF_TRUE": "block input text - Indicates that the following input should be returned (used as output) if the test input is true.  Remember to try to keep block text terse (short).",
@@ -186,7 +187,7 @@
 	"MATH_CONSTANT_TOOLTIP": "tooltip - Provides the specified [https://en.wikipedia.org/wiki/Mathematical_constant mathematical constant].",
 	"MATH_CONSTANT_PI_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
 	"MATH_CONSTANT_E_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
-	"MATH_CONSTANT_GOLDEN_RATIO_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
+	"MATH_CONSTANT_GOLDEN_RATIO_TYPEBLOCK": "",
 	"MATH_CONSTANT_SQRT2_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
 	"MATH_CONSTANT_SQRT1_2_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
 	"MATH_CONSTANT_INFINITY_TYPEBLOCK": "Typeblock - Autocomplete for typeblocking",
@@ -527,7 +528,7 @@
 	"MAPS_SET_INDEX_TOOLTIP": "tooltip - See [https://github.com/google/blockly/wiki/Maps#getting-a-single-item} (even though the page describes the 'get' block, the idea is the same for the 'set' block).",
 	"MAPS_SET_INDEX_TYPEBLOCK": "",
 	"MAPS_KEYS_TITLE": "block text - This lays out the text of the block.  %1 corresponds to a map",
-	"MAPS_KEYS_TYPEBLOCK": "tooltip - url - Information about putting items in Maps. typeblock - Typing to add the block",
+	"MAPS_KEYS_TYPEBLOCK": "tooltip -",
 	"ORDINAL_NUMBER_SUFFIX": "grammar - Text that follows an ordinal number (a number that indicates position relative to other numbers).  In most languages, such text appears before the number, so this should be blank.  An exception is Hungarian. See [[Translating:Blockly#Ordinal_numbers]] for more information.",
 	"VARIABLES_GET_HELPURL": "url - Information about ''variables'' in computer programming.  Consider using your language's translation of [https://en.wikipedia.org/wiki/Variable_(computer_science) https://en.wikipedia.org/wiki/Variable_(computer_science)], if it exists.",
 	"VARIABLES_GET_TOOLTIP": "tooltip - This gets the value of the named variable without modifying it.",
@@ -586,5 +587,6 @@
 	"COLOUR_HEX_TO_DECIMAL_TYPEBLOCK": "",
 	"COLOUR_HEX": "",
 	"COLOUR_TO_DECIMAL_BLOCK_TITLE": "",
-	"DELETE_ALL_BLOCKS": ""
+	"DELETE_ALL_BLOCKS": "",
+	"LOGIC_THIS": ""
 }
