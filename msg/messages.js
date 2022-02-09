@@ -1665,4 +1665,4 @@ Blockly.Msg.COLOUR_TO_DECIMAL_BLOCK_TITLE = 'to decimal';
 
 Blockly.Msg.DELETE_ALL_BLOCKS = 'Delete All Blocks';
 
-Blockly.Msg.LOGIC_THIS = 'Delete All Blocks';
+Blockly.Msg.LOGIC_THIS = 'This';

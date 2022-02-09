@@ -1197,22 +1197,38 @@ Blockly.Blocks['procedures_callfunctionreturn'] = {
   customContextMenu: Blockly.Blocks['procedures_callnoreturn'].customContextMenu
 };
 
-Blockly.Blocks['procedures_callmethodnoreturn'] = {
-  /**
-   * Block for calling a procedure with a return value.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL);
-    this.setColour(Blockly.Blocks.procedures.HUE);
-    this.appendDummyInput('TOPROW')
-        .appendField(Blockly.Msg.PROCEDURES_CALLRETURN_CALL)
-        .appendField('', 'NAME');
-    // Tooltip is set in domToMutation.
-    this.setOutput(true);
-    this.arguments_ = [];
-    this.quarkConnections_ = {};
-    this.quarkArguments_ = null;
+Blockly.Blocks['procedures_callclassmethod'] = {
+  init: function () {
+    console.log(this.getFieldValue('CLASS_NAME'))
+    this.setColour(230);
+    this.setTooltip(method.description);
+    this.setHelpUrl('');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.appendDummyInput()
+        .appendField(method.name);
+    let returnType = method.type;
+    if (returnType !== "void") {
+      this.setOutput(true, translateToBlockly(returnType));
+    }
+    let isStatic = method.isStatic;
+    if (!isStatic) {
+      this.appendValueInput('PARAM-INSTANCE')
+          .setAlign(Blockly.ALIGN_RIGHT)
+          .appendField('instance', 'ARGnInstance')
+          .setCheck(translateToBlockly(classObj.name));
+    }
+    this.class = classObj;
+    this.isStatic = isStatic;
+    for (let paramIndex in params) {
+      let param = params[paramIndex];
+      console.log('Blockly type', translateToBlockly(param.type))
+      this.appendValueInput('PARAM-' + paramIndex)
+          .setAlign(Blockly.ALIGN_RIGHT)
+          .appendField(param.name, 'ARGn' + paramIndex)
+          .setCheck(translateToBlockly(param.type));
+    }
+    this.arguments_ = params;
   }
 };
 
