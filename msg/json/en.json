@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-11-08 20:10:31.608000",
+		"lastupdated": "2022-03-15 20:43:37.038377",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -594,5 +594,5 @@
 	"COLOUR_HEX": "hex",
 	"COLOUR_TO_DECIMAL_BLOCK_TITLE": "to decimal",
 	"DELETE_ALL_BLOCKS": "Delete All Blocks",
-	"LOGIC_THIS": "Delete All Blocks"
+	"LOGIC_THIS": "This"
 }

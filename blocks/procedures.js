@@ -1201,11 +1201,11 @@ Blockly.Blocks['procedures_callclassmethod'] = {
   init: function () {
     console.log(this.getFieldValue('CLASS_NAME'))
     this.setColour(230);
-    this.setTooltip(method.description);
+    //this.setTooltip(method.description);
     this.setHelpUrl('');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.appendDummyInput()
+    /*this.appendDummyInput()
         .appendField(method.name);
     let returnType = method.type;
     if (returnType !== "void") {
@@ -1228,7 +1228,7 @@ Blockly.Blocks['procedures_callclassmethod'] = {
           .appendField(param.name, 'ARGn' + paramIndex)
           .setCheck(translateToBlockly(param.type));
     }
-    this.arguments_ = params;
+    this.arguments_ = params;*/
   }
 };
 
