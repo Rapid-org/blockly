@@ -1359,7 +1359,6 @@ Blockly.downloadScreenshot = function(workspace) {
         img.src = DOMURL.createObjectURL(svg());
     }
 
-    exportSVG()
     exportPNG()
 };
 
