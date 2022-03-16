@@ -1199,7 +1199,6 @@ Blockly.Blocks['procedures_callfunctionreturn'] = {
 
 Blockly.Blocks['procedures_callclassmethod'] = {
   init: function () {
-    throw new Error("lol");
     console.log("class: " + this.getFieldValue('CLASS_NAME'))
     this.setColour(290);
     //this.setTooltip(method.description);
