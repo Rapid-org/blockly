@@ -1319,7 +1319,7 @@ Blockly.downloadScreenshot = function(workspace) {
     var DOMURL = self.URL || self.webkitURL || self;
 
     function svg(){
-        canvas = Blockly.mainWorkspace.svgBlockCanvas_.cloneNode(true);
+        var canvas = Blockly.mainWorkspace.svgBlockCanvas_.cloneNode(true);
         if (canvas.children[0] === undefined) throw "Couldn't find Blockly canvas."
 
         canvas.removeAttribute("transform");

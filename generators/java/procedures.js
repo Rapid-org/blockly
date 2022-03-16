@@ -173,6 +173,10 @@ Blockly.Java['procedures_callnoreturn'] = function(block) {
   return code;
 };
 
+Blockly.Java['procedures_callclassmethod'] = function(block) {
+  return "{};"
+};
+
 Blockly.Java['procedures_ifreturn'] = function(block) {
   // Conditionally return value from a procedure.
   var condition = Blockly.Java.valueToCode(block, 'CONDITION',
