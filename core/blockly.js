@@ -1328,7 +1328,7 @@ Blockly.downloadScreenshot = function(workspace) {
         var bbox = document.getElementsByClassName("blocklyBlockCanvas")[0].getBBox();
         var content = new XMLSerializer().serializeToString(canvas);
 
-        xml = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'
+        var xml = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'
             + bbox.width + '" height="' + bbox.height + '" viewBox=" ' + bbox.x + ' ' + bbox.y + ' ' + bbox.width + ' ' + bbox.height + '">' +
             css + '">' + content + '</svg>';
 
