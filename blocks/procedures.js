@@ -1199,7 +1199,9 @@ Blockly.Blocks['procedures_callfunctionreturn'] = {
 
 Blockly.Blocks['procedures_callclassmethod'] = {
   init: function () {
-    console.log("class: " + this.getFieldValue('CLASS_NAME'))
+    this.appendDummyInput("METHOD_INFO")
+        .appendField("CLASS_NAME");
+    console.log("class: " + this.ge('CLASS_NAME'))
     this.setColour(290);
     //this.setTooltip(method.description);
     this.setHelpUrl('');
