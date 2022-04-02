@@ -426,9 +426,6 @@ Blockly.Xml.domToBlockHeadless_ =
         }
         break;
       case 'data':
-        while (true) {
-          console.log("DATA FOUND: " + xmlChild.textContent);
-        }
         block.data = xmlChild.textContent;
         break;
       case 'title':
