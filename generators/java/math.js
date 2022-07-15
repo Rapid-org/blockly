@@ -267,7 +267,7 @@ Blockly.Java['math_on_list'] = function(block) {
   var code;
   switch (func) {
     case 'SUM':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_sum',
           // This operation excludes null and values that aren't int or float:',
@@ -279,7 +279,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'MIN':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_min',
           // This operation excludes null and values that aren't int or float:',
@@ -291,7 +291,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'MAX':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_max',
           // This operation excludes null and values that aren't int or float:',
@@ -303,7 +303,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'AVERAGE':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_mean',
           // This operation excludes null and values that aren't int or float:',
@@ -315,7 +315,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'MEDIAN':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_median',
           // This operation excludes null values:
@@ -327,7 +327,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'MODE':
-      Blockly.Java.provideVarClass();
+      
       Blockly.Java.addImport('java.util.LinkedList');
       var functionName = Blockly.Java.provideFunction_(
           'math_modes',
@@ -341,7 +341,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'STD_DEV':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_standard_deviation',
           ['public static double ' + Blockly.Java.FUNCTION_NAME_PLACEHOLDER_ +
@@ -351,7 +351,7 @@ Blockly.Java['math_on_list'] = function(block) {
       code = functionName + '(' + list + ')';
       break;
     case 'RANDOM':
-      Blockly.Java.provideVarClass();
+      
       var functionName = Blockly.Java.provideFunction_(
           'math_random_list',
           [ 'public static Object ' + Blockly.Java.FUNCTION_NAME_PLACEHOLDER_ +

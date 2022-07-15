@@ -387,7 +387,7 @@ Blockly.Java['lists_split'] = function(block) {
       value_input = value_input.slice(0,-14) + '.getObjectAsList()';
     }
     Blockly.Java.addImport('java.lang.StringBuilder');
-    Blockly.Java.provideVarClass();
+    
     var functionName = Blockly.Java.provideFunction_(
          'lists_join',
         ['public static String ' + Blockly.Java.FUNCTION_NAME_PLACEHOLDER_ +
