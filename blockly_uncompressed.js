@@ -57,7 +57,7 @@ goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/menuitem.js', ['Bl
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/msg.js', ['Blockly.Msg'], []);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/mutator.js', ['Blockly.Mutator'], ['Blockly.Bubble', 'Blockly.Icon', 'Blockly.WorkspaceSvg', 'Blockly.utils.Timer', 'goog.Timer', 'goog.dom']);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/names.js', ['Blockly.Names'], []);
-goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/procedures.js', ['Blockly.Procedures'], ['Blockly.Field', 'Blockly.Names', 'Blockly.Workspace', 'Blockly.constants']);
+goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/procedures.js', ['Blockly.Procedures'], ['Blockly.Field', 'Blockly.Names', 'Blockly.Workspace', 'Blockly.constants'], {'lang': 'es6'});
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/realtime-client-utils.js', ['rtclient'], []);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/realtime.js', ['Blockly.Realtime'], ['goog.array', 'goog.dom', 'goog.style', 'rtclient']);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/requires.js', ['Blockly.requires'], ['Blockly', 'Blockly.Comment', 'Blockly.FieldAngle', 'Blockly.FieldCheckbox', 'Blockly.FieldColour', 'Blockly.FieldDropdown', 'Blockly.FieldImage', 'Blockly.FieldTextInput', 'Blockly.FieldVariable', 'Blockly.Generator', 'Blockly.Mutator', 'Blockly.Toolbox', 'Blockly.Trashcan', 'Blockly.Warning', 'Blockly.ZoomControls']);
