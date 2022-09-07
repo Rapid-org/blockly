@@ -107,20 +107,25 @@ Blockly.Procedures.findLegalName = function(name, block) {
  * @return {boolean} True if the name is legal.
  */
 Blockly.Procedures.isLegalName = function(name, workspace, opt_exclude) {
-  var blocks = workspace.getAllBlocks();
+  const blocks = workspace.getAllBlocks();
   // Iterate through every block and check the name.
-  for (var i = 0; i < blocks.length; i++) {
+  for (let i = 0; i < blocks.length; i++) {
     if (blocks[i] === opt_exclude) {
       continue;
     }
     if (blocks[i].getProcedureDef) {
-      var procName = blocks[i].getProcedureDef();
-      var isLegal = false;
+      const procName = blocks[i].getProcedureDef();
+      let isLegal = false;
       if (Blockly.Names.equals(procName[0], name)) {
         for (let i = 0; i< procName[1].length; i++) {
           let argument = procName[1][i];
-          if (argument['type'] !== opt_exclude.getProcedureDef()[1][i]['type']) {
-            isLegal = true; // at least one argument type is different is enough to be a unique procedure; even with the same name!
+          if (argument) {
+            const sourceBlockArg = opt_exclude.getProcedureDef()[1][i];
+            if (sourceBlockArg) {
+              if (argument['type'] !== sourceBlockArg['type']) {
+                isLegal = true; // at least one argument type is different is enough to be a unique procedure; even with the same name!
+              }
+            }
           }
         }
         return isLegal;
