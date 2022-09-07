@@ -56,9 +56,6 @@ Blockly.Java['lists_create_with'] = function(block) {
   for (var n = 0; n < block.itemCount_; n++) {
     code[n] = Blockly.Java.valueToCode(block, 'ADD' + n,
         Blockly.Java.ORDER_NONE) || 'null';
-    if (subType === 'Var') {
-      code[n] = 'Var.valueOf('+code[n]+')';
-    }
   }
   Blockly.Java.setTargetType(oldType);
 

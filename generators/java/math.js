@@ -274,8 +274,9 @@ Blockly.Java['math_on_list'] = function(block) {
           // math_mean([null, null, "aString", 1, 9]) == 5.0.',
           ['public static double ' + Blockly.Java.FUNCTION_NAME_PLACEHOLDER_ +
            '(List myList) {',
-           '  return Var.math_sum(Var.valueOf(myList));',
-           '}']);
+           'for (Object obj : myList) {',
+           '',
+           '}}']);
       code = functionName + '(' + list + ')';
       break;
     case 'MIN':

@@ -460,7 +460,7 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
       this.getImports() + '\n' +
       '@SimpleObject(external=true)\n' +
       '@DesignerComponent(version = ' + this.getVersionNumber() +', nonVisible = true, category = ComponentCategory.EXTENSION, iconName = "' + this.getIcon() + '", description = "' + this.getDescription() + '", versionName = "' + this.getVersionName() + '"';
-  if (this.getHomeWebsite().length) {
+  if (this.getHomeWebsite().length) {g
     finalcode += ', helpUrl = "' + this.getHomeWebsite() + '"';
   }
   if (this.getMinSdk().length) {
@@ -481,9 +481,9 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
     }
   }
   finalcode += ' {\n\n' +
-      'public ' + this.getAppName() + '(ComponentContainer container) {\n' +
-      '  super(container.$form());\n' +
-      '}\n' +
+      '  public ' + this.getAppName() + '(ComponentContainer container) {\n' +
+      '    super(container.$form());\n' +
+      '  }\n' +
       code + '\n' +
       '}\n\n' +
       this.getClasses()
