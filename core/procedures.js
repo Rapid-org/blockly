@@ -117,6 +117,9 @@ Blockly.Procedures.isLegalName = function(name, workspace, opt_exclude) {
       const procName = blocks[i].getProcedureDef();
       let isLegal = false;
       if (Blockly.Names.equals(procName[0], name)) {
+        if (opt_exclude.getProcedureDef()[1].length !== procName[1].length)  {
+          return true; // argument length is different, couldn't be identical
+        }
         for (let i = 0; i< procName[1].length; i++) {
           let argument = procName[1][i];
           if (argument) {
