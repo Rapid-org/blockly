@@ -460,7 +460,7 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
       this.getImports() + '\n' +
       '@SimpleObject(external=true)\n' +
       '@DesignerComponent(version = ' + this.getVersionNumber() +', nonVisible = true, category = ComponentCategory.EXTENSION, iconName = "' + this.getIcon() + '", description = "' + this.getDescription() + '", versionName = "' + this.getVersionName() + '"';
-  if (this.getHomeWebsite().length) {g
+  if (this.getHomeWebsite().length) {
     finalcode += ', helpUrl = "' + this.getHomeWebsite() + '"';
   }
   if (this.getMinSdk().length) {
