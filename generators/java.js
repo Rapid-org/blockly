@@ -645,6 +645,7 @@ Blockly.Java.finish = function(code) {
     if (name === 'variables') {
       continue;
     }
+    console.log("def name", name)
     var def = this.definitions_[name];
     var slot = 1;
     // If the call back for the definition is a function we will asssume that
@@ -690,6 +691,7 @@ Blockly.Java.finish = function(code) {
     var names = funcs[slot].sort();
     for (var pos = 0; pos < names.length; pos++) {
       var def = this.definitions_[names[pos]];
+      console.log("def", def)
       if (typeof def === "function") {
         def = def.call(this);
       }
