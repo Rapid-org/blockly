@@ -726,10 +726,12 @@ Blockly.Java.finish = function(code) {
       allDefs += header + def + '\n\n';
     }
   }
+  console.log("all defs", allDefs);
   // Clean up temporary data.
   delete Blockly.Java.definitions_;
   delete Blockly.Java.functionNames_;
   Blockly.Java.variableDB_.reset();
+  console.log("java finish out", allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code);
   return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
 };
 
