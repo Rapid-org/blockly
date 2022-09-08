@@ -448,9 +448,9 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   // Generate the code first to get all of the required imports calculated.
   this.forceUpdate(workspace);
 
-  this.provideVarClass();
 
   var code = this.workspaceToCode_(workspace,parms);
+  this.provideVarClass();
   this.addImport("com.google.appinventor.components.runtime.AndroidNonvisibleComponent");
   this.addImport("com.google.appinventor.components.runtime.ComponentContainer");
   this.addImport("com.google.appinventor.components.annotations.SimpleObject");
