@@ -543,7 +543,7 @@ Blockly.Java.mapType = function(type) {
       // We can use the type as is.
     } else {
       console.log('Unknown type for '+key+' using Var for '+type);
-      type = 'Object';
+      type = 'Var';
     }
 
     // See if we have any sub elements
