@@ -647,6 +647,7 @@ Blockly.Java.finish = function(code) {
     }
     console.log("def name", name)
     var def = this.definitions_[name];
+    console.log(def)
     var slot = 1;
     // If the call back for the definition is a function we will asssume that
     // it is not static
