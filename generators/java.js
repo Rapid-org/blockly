@@ -658,7 +658,7 @@ Blockly.Java.finish = function(code) {
         slot = 0;
       }
     }
-    funcs[slot].push(name);
+    funcs[slot].push(name.split(":")[0]);
   }
 
   // We have all the functions broken into two slots.  So go through in order

@@ -189,7 +189,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleProperty");
   code = Blockly.Java.scrub_(block, code);
-  Blockly.Java.definitions_[funcName] = code;
+  Blockly.Java.definitions_[funcName + ":" + args.join(",")] = code;
   return null;
 };
 
