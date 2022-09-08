@@ -690,6 +690,7 @@ Blockly.Java.finish = function(code) {
 
   for(var slot = 0; slot < 2; slot++) {
     var names = funcs[slot].sort();
+    console.log(names)
     for (var pos = 0; pos < names.length; pos++) {
       var def = this.definitions_[names[pos]];
       console.log("def", def)
