@@ -448,6 +448,8 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   // Generate the code first to get all of the required imports calculated.
   this.forceUpdate(workspace);
 
+  this.provideVarClass();
+
   var code = this.workspaceToCode_(workspace,parms);
   this.addImport("com.google.appinventor.components.runtime.AndroidNonvisibleComponent");
   this.addImport("com.google.appinventor.components.runtime.ComponentContainer");
@@ -681,7 +683,7 @@ Blockly.Java.finish = function(code) {
     }
     var varname = Blockly.Java.variableDB_.getName(def,
         Blockly.Variables.NAME_TYPE);
-    allDefs += 'protected ' + type + ' ' + varname + initializer + ';\n';
+    allDefs += 'public ' + type + ' ' + varname + initializer + ';\n';
   }
 
   for(var slot = 0; slot < 2; slot++) {

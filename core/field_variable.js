@@ -166,8 +166,8 @@ Blockly.FieldVariable.dropdownChange = function(text) {
     // Beyond this, all names are legal.
     if (newVar) {
       newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
-      if (newVar == Blockly.Msg.RENAME_VARIABLE ||
-          newVar == Blockly.Msg.NEW_VARIABLE) {
+      if (newVar === Blockly.Msg.RENAME_VARIABLE ||
+          newVar === Blockly.Msg.NEW_VARIABLE) {
         // Ok, not ALL names are legal...
         newVar = null;
       }

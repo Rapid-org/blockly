@@ -818,6 +818,12 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
             window.top['openImportClassDialog']();
         };
         menuOptions.push(importClassOption);
+      const newVariableOption = { enabled: true };
+      newVariableOption.text = "New Variable";
+      newVariableOption.callback = function() {
+        window.top['openNewVariableDialog']();
+      };
+      menuOptions.push(newVariableOption);
         var screenshotOption = {
             text: 'Download Screenshot',
             enabled: this.getTopBlocks().length,
