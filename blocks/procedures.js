@@ -796,15 +796,6 @@ Blockly.Blocks['procedures_defpropertyreturn'] = {
       }
     }
     nameField.setSpellcheck(false);
-    var addField = '';
-    var addName = 'PARAMS';
-    if (!this.workspace.options.useMutators) {
-      addField = new Blockly.FieldClickImage(this.addPng, 17, 17);
-      addField.setChangeHandler(this.doAddField);
-      addName = null;
-    } else {
-      this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
-    }
     this.appendDummyInput()
       .appendField(Blockly.Msg.PROCEDURES_DEFPROPERTYNORETURN_TITLE)
       .appendField(nameField, 'NAME')
@@ -884,14 +875,14 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
     }
     this.appendDummyInput()
       .appendField(Blockly.Msg.PROCEDURES_DEFPROPERTYNORETURN_TITLE)
-      .appendField(nameField, 'NAME')
-      .appendField(addField, addName);
+      .appendField(nameField, 'NAME');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
-    this.arguments_ = [];
+    this.arguments_ = [{name: "param", type: "STRING", id: this.argid++}];
     this.argid = 0;
     this.setStatements_(true);
     this.statementConnection_ = null;
+    this.updateParams_();
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
