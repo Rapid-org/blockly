@@ -796,6 +796,9 @@ Blockly.Blocks['procedures_defpropertyreturn'] = {
       }
     }
     nameField.setSpellcheck(false);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.PROCEDURES_DEFPROPERTYNORETURN_TITLE)
+      .appendField(nameField, 'NAME');
     this.appendValueInput('RETURN')
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
