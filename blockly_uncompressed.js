@@ -85,7 +85,7 @@ goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/utils/svg.js', ['B
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/utils/timer.js', ['Blockly.utils.Timer'], []);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/utils/useragent.js', ['Blockly.utils.userAgent'], ['Blockly.utils.global']);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/utils/xml.js', ['Blockly.utils.xml'], []);
-goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/variables.js', ['Blockly.Variables'], ['Blockly.Workspace', 'goog.string']);
+goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/variables.js', ['Blockly.Variables'], ['Blockly.Workspace', 'goog.string'], {'lang': 'es6'});
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/warning.js', ['Blockly.Warning'], ['Blockly.Bubble', 'Blockly.Icon']);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/widgetdiv.js', ['Blockly.WidgetDiv'], ['Blockly.Css', 'goog.dom', 'goog.style']);
 goog.addDependency('../../../../E:/Mohamed/rapid/blockly/core/workspace.js', ['Blockly.Workspace'], ['goog.math']);
