@@ -238,15 +238,21 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
     code += '@DesignerProperty(editorType=PropertyTypeConstants.';
     var propType = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[0]['name']);
+    var defaultVal = "";
     if (propType === "String") {
       code += "PROPERTY_TYPE_TEXT";
+      defaultVal = "\"\"";
     } else if (propType === "boolean") {
       code += "PROPERTY_TYPE_BOOLEAN";
+      defaultVal = "false";
     } else if (propType === "double") {
       code += "PROPERTY_TYPE_NON_NEGATIVE_DOUBLE";
+      defaultVal = "0.0";
     } else {
       code += "PROPERTY_TYPE_TEXT";
+      defaultVal = "\"\""
     }
+    code += ", defaultValue=" + defaultVal + ")\n";
   }
   code += '  @SimpleProperty\n  public ' + retType + ' ' +
     funcName + '(' + args.join(', ') + ') {\n' +
