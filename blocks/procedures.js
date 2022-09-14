@@ -877,7 +877,7 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
       .appendField(nameField, 'NAME');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
-    this.arguments_ = [{name: "param", type: "STRING", id: this.argid++}];
+    this.arguments_ = [{name: "param", type: "String", id: this.argid++}];
     this.argid = 0;
     this.setStatements_(true);
     this.statementConnection_ = null;
@@ -885,7 +885,9 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
-  doRemoveField: Blockly.Blocks['procedures_defnoreturn'].doRemoveField,
+  doRemoveField: function () {
+    console.log("Attempt to remove property single parameter.")
+  },
   updateParam: Blockly.Blocks['procedures_defnoreturn'].updateParam,
   updateType: Blockly.Blocks['procedures_defnoreturn'].updateType,
   setStatements_: Blockly.Blocks['procedures_defnoreturn'].setStatements_,
