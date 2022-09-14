@@ -237,7 +237,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
   if (designerProperty && designerProperty === "TRUE") {
     code += '@DesignerProperty(editorType=PropertyTypeConstants.';
     var propType = Blockly.Java.GetVariableType(funcPrefix + '.' +
-      block.arguments_[x]['name']);
+      block.arguments_[0]['name']);
     if (propType === "String") {
       code += "PROPERTY_TYPE_TEXT";
     } else if (propType === "boolean") {
