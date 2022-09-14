@@ -811,17 +811,6 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
         block.dispose( /* heal */ true, true);
       }
     };
-    const deleteUnusedOption = { enabled: true };
-    deleteUnusedOption.text = "Delete Unused Blocks";
-    deleteUnusedOption.callback = function() {
-      for (let i in allBlocks) {
-        let block = allBlocks[i];
-        if (!block.parentBlock_) {
-          block.dispose( /* heal */ true, true);
-        }
-      }
-    };
-    menuOptions.push(deleteUnusedOption);
     const importClassOption = { enabled: true };
     importClassOption.text = Blockly.Msg.IMPORT_CLASS;
     importClassOption.callback = function() {

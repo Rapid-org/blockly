@@ -805,7 +805,7 @@ Blockly.Blocks['procedures_defeventnoreturn'] = {
       this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
     }
     this.appendDummyInput()
-      .appendField(Blockly.Msg.PROCEDURES_DEFFUNCTIONNORETURN_TITLE)
+      .appendField(Blockly.Msg.PROCEDURES_DEFEVENTNORETURN_TITLE)
       .appendField(nameField, 'NAME')
       .appendField(addField, addName);
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);

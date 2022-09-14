@@ -104,6 +104,9 @@ Blockly.Variables.Intersection = function (arr1, arr2) {
       // to iterate over them all.
       for (var e = 0; e < toadd.length; e++) {
         // See if this has any subtypes (Array:String, Map:String, ...)
+        console.log(e);
+        console.log(toadd);
+        console.log(toadd[e]);
         if (toadd[e]) {
           var subtype = toadd[e].split(':');
           // TODO: Do we need to handle equivalence of subtypes?
