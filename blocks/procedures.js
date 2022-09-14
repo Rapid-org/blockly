@@ -937,8 +937,7 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.PROCEDURES_DEFPROPERTYNORETURN_TITLE)
       .appendField(nameField, 'NAME')
-      .appendField("Designer Property: ")
-      .appendField(new Blockly.FieldCheckbox('TRUE'), 'DESIGNER');
+      .appendField("Designer Property: ");
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [{name: "param", type: "String", id: this.argid++}];
@@ -946,6 +945,8 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
     this.setStatements_(true);
     this.statementConnection_ = null;
     this.updateParams_();
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldCheckbox('TRUE'), 'DESIGNER');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
