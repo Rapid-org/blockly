@@ -709,7 +709,7 @@ Blockly.Blocks['procedures_deffunctionreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionreturn'
+  callType_: 'procedures_callfunctionnoreturn'
 };
 
 Blockly.Blocks['procedures_deffunctionnoreturn'] = {
@@ -833,7 +833,7 @@ Blockly.Blocks['procedures_defeventnoreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionnoreturn'
+  callType_: 'procedures_calleventnoreturn'
 };
 
 
@@ -965,7 +965,7 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionnoreturn'
+  callType_: 'procedures_callpropertynoreturn'
 };
 
 Blockly.Blocks['procedures_callnoreturn'] = {
@@ -1346,15 +1346,16 @@ Blockly.Blocks['procedures_callfunctionnoreturn'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL);
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
     this.setColour(Blockly.Blocks.procedures.HUE);
     this.appendDummyInput('TOPROW')
-        .appendField(Blockly.Msg.PROCEDURES_CALLRETURN_CALL)
-        .appendField('', 'NAME');
+      .appendField(Blockly.Msg.PROCEDURES_CALLNORETURN_CALL)
+      .appendField('', 'NAME');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     // Tooltip is set in domToMutation.
     this.arguments_ = [];
     this.quarkConnections_ = {};
-    this.quarkArguments_ = null;
   },
   getProcedureCall: Blockly.Blocks['procedures_callnoreturn'].getProcedureCall,
   renameProcedure: Blockly.Blocks['procedures_callnoreturn'].renameProcedure,
@@ -1401,15 +1402,16 @@ Blockly.Blocks['procedures_callpropertynoreturn'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL);
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
     this.setColour(Blockly.Blocks.procedures.HUE);
     this.appendDummyInput('TOPROW')
-      .appendField(Blockly.Msg.PROCEDURES_CALLRETURN_CALL)
+      .appendField(Blockly.Msg.PROCEDURES_CALLNORETURN_CALL)
       .appendField('', 'NAME');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     // Tooltip is set in domToMutation.
     this.arguments_ = [];
     this.quarkConnections_ = {};
-    this.quarkArguments_ = null;
   },
   getProcedureCall: Blockly.Blocks['procedures_callnoreturn'].getProcedureCall,
   renameProcedure: Blockly.Blocks['procedures_callnoreturn'].renameProcedure,
@@ -1438,6 +1440,62 @@ Blockly.Blocks['procedures_callpropertyreturn'] = {
     this.arguments_ = [];
     this.quarkConnections_ = {};
     this.quarkArguments_ = null;
+  },
+  getProcedureCall: Blockly.Blocks['procedures_callnoreturn'].getProcedureCall,
+  renameProcedure: Blockly.Blocks['procedures_callnoreturn'].renameProcedure,
+  getVarsTypes: Blockly.Blocks['procedures_callnoreturn'].getVarsTypes,
+  setProcedureParameters:
+  Blockly.Blocks['procedures_callnoreturn'].setProcedureParameters,
+  mutationToDom: Blockly.Blocks['procedures_callnoreturn'].mutationToDom,
+  domToMutation: Blockly.Blocks['procedures_callnoreturn'].domToMutation,
+  renameVar: Blockly.Blocks['procedures_callnoreturn'].renameVar,
+  customContextMenu: Blockly.Blocks['procedures_callnoreturn'].customContextMenu
+};
+
+Blockly.Blocks['procedures_callpropertynoreturn'] = {
+  /**
+   * Block for calling a procedure with a return value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
+    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.appendDummyInput('TOPROW')
+      .appendField(Blockly.Msg.PROCEDURES_CALLNORETURN_CALL)
+      .appendField('', 'NAME');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    // Tooltip is set in domToMutation.
+    this.arguments_ = [];
+    this.quarkConnections_ = {};
+  },
+  getProcedureCall: Blockly.Blocks['procedures_callnoreturn'].getProcedureCall,
+  renameProcedure: Blockly.Blocks['procedures_callnoreturn'].renameProcedure,
+  getVarsTypes: Blockly.Blocks['procedures_callnoreturn'].getVarsTypes,
+  setProcedureParameters:
+  Blockly.Blocks['procedures_callnoreturn'].setProcedureParameters,
+  mutationToDom: Blockly.Blocks['procedures_callnoreturn'].mutationToDom,
+  domToMutation: Blockly.Blocks['procedures_callnoreturn'].domToMutation,
+  renameVar: Blockly.Blocks['procedures_callnoreturn'].renameVar,
+  customContextMenu: Blockly.Blocks['procedures_callnoreturn'].customContextMenu
+};
+
+Blockly.Blocks['procedures_calleventnoreturn'] = {
+  /**
+   * Block for calling a procedure with a return value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
+    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.appendDummyInput('TOPROW')
+      .appendField(Blockly.Msg.PROCEDURES_CALLNORETURN_CALL)
+      .appendField('', 'NAME');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    // Tooltip is set in domToMutation.
+    this.arguments_ = [];
+    this.quarkConnections_ = {};
   },
   getProcedureCall: Blockly.Blocks['procedures_callnoreturn'].getProcedureCall,
   renameProcedure: Blockly.Blocks['procedures_callnoreturn'].renameProcedure,
