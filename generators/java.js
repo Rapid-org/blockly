@@ -359,7 +359,7 @@ Blockly.Java.setGlobalVar = function(block,name,val) {
 Blockly.Java.GetVariableType = function(name) {
   var type = this.variableTypes_[name];
   if (!type) {
-    type = 'Var';
+    type = 'Object';
   }
   return type;
 };
@@ -533,7 +533,7 @@ Blockly.Java.mapType = function(type) {
     // pretend that the type is a Var
     if (!typeArray || typeArray.length === 0) {
       console.log('Empty type. Using Var');
-      typeArray = ['Var'];
+      typeArray = ['Object'];
     }
     var key = typeArray.shift();
     var type = key;
@@ -544,8 +544,8 @@ Blockly.Java.mapType = function(type) {
     } else if (Blockly.VariableTypeEquivalence[type]) {
       // We can use the type as is.
     } else {
-      console.log('Unknown type for '+key+' using Var for '+type);
-      type = 'Var';
+      console.log('Unknown type for '+key+' using Object for '+type);
+      type = 'Object';
     }
 
     // See if we have any sub elements
