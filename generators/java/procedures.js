@@ -232,10 +232,26 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
         Blockly.Variables.NAME_TYPE);
   }
 
-  var code = '  @SimpleProperty\n  public ' + retType + ' ' +
+  var code = '';
+  if (block.getFieldValue("DESIGNER") === "TRUE") {
+    code += '@DesignerProperty(editorType=PropertyTypeConstants.';
+    var propType = Blockly.Java.GetVariableType(funcPrefix + '.' +
+      block.arguments_[x]['name']);
+    if (propType === "String") {
+      code += "PROPERTY_TYPE_TEXT";
+    } else if (propType === "boolean") {
+      code += "PROPERTY_TYPE_BOOLEAN";
+    } else if (propType === "double") {
+      code += "PROPERTY_TYPE_NON_NEGATIVE_DOUBLE";
+    } else {
+      code += "PROPERTY_TYPE_TEXT";
+    }
+  }
+  code += '  @SimpleProperty\n  public ' + retType + ' ' +
     funcName + '(' + args.join(', ') + ') {\n' +
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleProperty");
+  Blockly.Java.addImport("com.google.appinventor.components.common.PropertyTypeConstants");
   code = Blockly.Java.scrub_(block, code);
   Blockly.Java.definitions_[funcName + ":" + args.join(",")] = code;
   return null;
@@ -270,9 +286,12 @@ Blockly.Java['procedures_callnoreturn'] = function(block) {
   return code;
 };
 
-Blockly.Java['procedures_callclassmethod'] = function(block) {
-  return "{};"
-};
+Blockly.Java['procedures_callfunctionreturn']  = Blockly.Java['procedures_callreturn'];
+Blockly.Java['procedures_callfunctionnoreturn']  = Blockly.Java['procedures_callnoreturn'];
+Blockly.Java['procedures_callpropertynoreturn']  = Blockly.Java['procedures_callnoreturn'];
+Blockly.Java['procedures_callpropertyreturn']  = Blockly.Java['procedures_callreturn'];
+Blockly.Java['procedures_calleventnoreturn']  = Blockly.Java['procedures_callnoreturn'];
+Blockly.Java['procedures_calleventreturn']  = Blockly.Java['procedures_callreturn'];
 
 Blockly.Java['procedures_ifreturn'] = function(block) {
   // Conditionally return value from a procedure.

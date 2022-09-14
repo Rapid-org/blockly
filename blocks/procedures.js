@@ -1406,7 +1406,9 @@ Blockly.Blocks['procedures_callpropertynoreturn'] = {
     this.setColour(Blockly.Blocks.procedures.HUE);
     this.appendDummyInput('TOPROW')
       .appendField(Blockly.Msg.PROCEDURES_CALLNORETURN_CALL)
-      .appendField('', 'NAME');
+      .appendField('', 'NAME')
+      .appendField("Designer Property: ")
+      .appendField(new Blockly.FieldCheckbox('TRUE'), 'DESIGNER');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     // Tooltip is set in domToMutation.
