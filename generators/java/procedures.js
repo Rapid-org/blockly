@@ -144,6 +144,54 @@ Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleFunc
   return null;
 };
 
+Blockly.Java['procedures_defeventnoreturn'] = function (block) {
+  // Define a procedure with a return value.
+  var funcPrefix = block.getFieldValue('NAME');
+  var funcName = Blockly.Java.variableDB_.getName(funcPrefix,
+    Blockly.Procedures.NAME_TYPE);
+  var branch = Blockly.Java.statementToCode(block, 'STACK');
+  if (Blockly.Java.STATEMENT_PREFIX) {
+    branch = Blockly.Java.prefixLines(
+      Blockly.Java.STATEMENT_PREFIX.replace(/%1/g,
+        '\'' + block.id + '\''), Blockly.Java.INDENT) + branch;
+  }
+  if (Blockly.Java.INFINITE_LOOP_TRAP) {
+    branch = Blockly.Java.INFINITE_LOOP_TRAP.replace(/%1/g,
+      '"' + block.id + '"') + branch;
+  }
+  var retType = 'void';
+  if (this.hasReturnValue_) {
+    retType = getJavaType(block.getFieldValue('PROCEDURE_RETURN_TYPE'));
+    console.log(retType);
+  }
+
+  var returnValue = Blockly.Java.valueToCode(block, 'RETURN',
+    Blockly.Java.ORDER_NONE) || '';
+  if (returnValue) {
+    returnValue = '    return ' + returnValue + ';\n';
+  } else if (!branch) {
+    branch = Blockly.Java.PASS;
+  }
+  var args = [];
+  for (var x = 0; x < block.arguments_.length; x++) {
+    var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
+      block.arguments_[x]['name']);
+    args[x] = type + ' ' +
+      Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
+        Blockly.Variables.NAME_TYPE);
+  }
+
+  var code = '  @SimpleEvent\n  public ' + retType + ' ' +
+    funcName + '(' + args.join(', ') + ') {\n' +
+    "EventDispatcher.dispatchEvent(this, \"" + funcName + "\"" + ", " + args.join(', ') + ");\n" +
+    branch + returnValue + "  }";
+  Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleEvent");
+  Blockly.Java.addImport("com.google.appinventor.components.runtime.EventDispatcher");
+  code = Blockly.Java.scrub_(block, code);
+  Blockly.Java.definitions_[funcName] = code;
+  return null;
+};
+
 Blockly.Java['procedures_deffunctionreturn'] =
     Blockly.Java['procedures_deffunctionnoreturn'];
 

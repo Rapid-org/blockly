@@ -812,8 +812,8 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
       }
     };
     const deleteUnusedOption = { enabled: true };
-    deleteOption.text = "Delete Unused Blocks";
-    deleteOption.callback = function() {
+    deleteUnusedOption.text = "Delete Unused Blocks";
+    deleteUnusedOption.callback = function() {
       for (let i in allBlocks) {
         let block = allBlocks[i];
         if (!block.parentBlock_) {

@@ -774,6 +774,68 @@ Blockly.Blocks['procedures_deffunctionnoreturn'] = {
   callType_: 'procedures_callfunctionnoreturn'
 };
 
+Blockly.Blocks['procedures_defeventnoreturn'] = {
+  /**
+   * Block for defining a procedure with a return value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
+    this.setColour(Blockly.Blocks.procedures.HUE);
+    var nameField = new Blockly.FieldTextInput(
+      Blockly.Msg.PROCEDURES_DEFEVENTRETURN_PROCEDURE,
+      rename);
+    var instance = this;
+    function rename(text) {
+      Blockly.Procedures.rename(text, this.text_, instance);
+      if (!/^[A-Z][A-Za-z]*$/.test(text)) {
+        instance.setWarningText("Events must be in upper camel case.");
+      } else {
+        instance.setWarningText(null);
+      }
+    }
+    nameField.setSpellcheck(false);
+    var addField = '';
+    var addName = 'PARAMS';
+    if (!this.workspace.options.useMutators) {
+      addField = new Blockly.FieldClickImage(this.addPng, 17, 17);
+      addField.setChangeHandler(this.doAddField);
+      addName = null;
+    } else {
+      this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
+    }
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.PROCEDURES_DEFFUNCTIONNORETURN_TITLE)
+      .appendField(nameField, 'NAME')
+      .appendField(addField, addName);
+    this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
+    this.setInputsInline(false);
+    this.arguments_ = [];
+    this.argid = 0;
+    this.setStatements_(true);
+    this.statementConnection_ = null;
+  },
+  isTopLevel: true,
+  doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
+  doRemoveField: Blockly.Blocks['procedures_defnoreturn'].doRemoveField,
+  updateParam: Blockly.Blocks['procedures_defnoreturn'].updateParam,
+  updateType: Blockly.Blocks['procedures_defnoreturn'].updateType,
+  setStatements_: Blockly.Blocks['procedures_defnoreturn'].setStatements_,
+  validate: Blockly.Blocks['procedures_defnoreturn'].validate,
+  updateParams_: Blockly.Blocks['procedures_defnoreturn'].updateParams_,
+  mutationToDom: Blockly.Blocks['procedures_defnoreturn'].mutationToDom,
+  domToMutation: Blockly.Blocks['procedures_defnoreturn'].domToMutation,
+  decompose: Blockly.Blocks['procedures_defnoreturn'].decompose,
+  compose: Blockly.Blocks['procedures_defnoreturn'].compose,
+  dispose: Blockly.Blocks['procedures_defnoreturn'].dispose,
+  getProcedureDef: Blockly.Blocks['procedures_defnoreturn'].getProcedureDef,
+  getVars: Blockly.Blocks['procedures_defnoreturn'].getVars,
+  getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
+  renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
+  customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
+  callType_: 'procedures_callfunctionnoreturn'
+};
+
 
 Blockly.Blocks['procedures_defpropertyreturn'] = {
   /**
