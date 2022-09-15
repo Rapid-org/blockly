@@ -133,6 +133,7 @@ Blockly.Generator.prototype.prefixLines = function(text, prefix) {
   if (!text) {
     text ="";
   }
+  console.log(text);
   return prefix + text.replace(/\n(.)/g, '\n' + prefix + '$1');
 };
 
