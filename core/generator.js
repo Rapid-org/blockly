@@ -38,7 +38,7 @@ goog.require('goog.asserts');
 Blockly.Generator = function(name) {
   this.name_ = name;
   this.FUNCTION_NAME_PLACEHOLDER_REGEXP_ =
-      new RegExp(this.FUNCTION_NAME_PLACEHOLDER_, 'g');
+    new RegExp(this.FUNCTION_NAME_PLACEHOLDER_, 'g');
 };
 
 /**
@@ -130,8 +130,8 @@ Blockly.Generator.prototype.workspaceToCode = function(workspace, parms) {
  * @return {string} The prefixed lines of code.
  */
 Blockly.Generator.prototype.prefixLines = function(text, prefix) {
-  if (!text) {
-    text ="";
+  if (Array.isArray(text)) {
+    text = text[0];
   }
   console.log(text);
   return prefix + text.replace(/\n(.)/g, '\n' + prefix + '$1');
@@ -180,8 +180,8 @@ Blockly.Generator.prototype.blockToCode = function(block,parms,nostash) {
   console.log("Function");
   console.log(func);
   goog.asserts.assertFunction(func,
-      'Language "%s" does not know how to generate code for block type "%s".',
-      this.name_, block.type);
+    'Language "%s" does not know how to generate code for block type "%s".',
+    this.name_, block.type);
   // First argument to func.call is the value of 'this' in the generator.
   // Prior to 24 September 2013 'this' was the only way to access the block.
   // The current prefered method of accessing the block is through the second
@@ -200,7 +200,7 @@ Blockly.Generator.prototype.blockToCode = function(block,parms,nostash) {
   } else if (typeof code == 'string') {
     if (this.STATEMENT_PREFIX) {
       code = this.STATEMENT_PREFIX.replace(/%1/g, '\'' + block.id + '\'') +
-          code;
+        code;
     }
     return this.scrub_(block, stash + code, parms);
   } else if (code === null) {
@@ -240,12 +240,12 @@ Blockly.Generator.prototype.valueToCode = function(block, name, order, parms) {
   // Value blocks must return code and order of operations info.
   // Statement blocks must only return code.
   goog.asserts.assertArray(tuple,
-      'Expecting tuple from value block "%s".', targetBlock.type);
+    'Expecting tuple from value block "%s".', targetBlock.type);
   var code = tuple[0];
   var innerOrder = tuple[1];
   if (isNaN(innerOrder)) {
     goog.asserts.fail('Expecting valid order from value block "%s".',
-        targetBlock.type);
+      targetBlock.type);
   }
   if (code && order <= innerOrder) {
     if (order == innerOrder && (order == 0 || order == 99)) {
@@ -278,8 +278,8 @@ Blockly.Generator.prototype.statementToCode = function(block, name, parms) {
   // Value blocks must return code and order of operations info.
   // Statement blocks must only return code.
   goog.asserts.assertString(code,
-      'Expecting code from statement block "%s".',
-      targetBlock && targetBlock.type);
+    'Expecting code from statement block "%s".',
+    targetBlock && targetBlock.type);
   if (code) {
     code = this.prefixLines(/** @type {string} */ (code), this.INDENT);
   }
@@ -299,7 +299,7 @@ Blockly.Generator.prototype.addLoopTrap = function(branch, id) {
   }
   if (this.STATEMENT_PREFIX) {
     branch += this.prefixLines(this.STATEMENT_PREFIX.replace(/%1/g,
-        '\'' + id + '\''), this.INDENT);
+      '\'' + id + '\''), this.INDENT);
   }
   return branch;
 };
@@ -357,10 +357,10 @@ Blockly.Generator.prototype.FUNCTION_NAME_PLACEHOLDER_ = '{leCUI8hutHZI4480Dc}';
 Blockly.Generator.prototype.provideFunction_ = function(desiredName, code) {
   if (!this.definitions_[desiredName]) {
     var functionName =
-        this.variableDB_.getDistinctName(desiredName, this.NAME_TYPE);
+      this.variableDB_.getDistinctName(desiredName, this.NAME_TYPE);
     this.functionNames_[desiredName] = functionName;
     this.definitions_[desiredName] = code.join('\n').replace(
-        this.FUNCTION_NAME_PLACEHOLDER_REGEXP_, functionName);
+      this.FUNCTION_NAME_PLACEHOLDER_REGEXP_, functionName);
   }
   return this.functionNames_[desiredName];
 };
