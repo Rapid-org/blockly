@@ -97,7 +97,7 @@ Blockly.Java['logic_compare'] = function(block) {
         argument1 = '""';
     }
     if (operator === '' || operator === '!') {
-        code = operator + argument0 + ' == ' + argument1 + ')';
+        code = '(' + operator + '('  + argument0 + ' == ' + argument1 + ')' + ')';
     } else {
         code = argument0 + '.compareTo(' + argument1 + ') ' + operator + ' 0';
     }
