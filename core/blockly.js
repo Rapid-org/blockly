@@ -262,7 +262,7 @@ Blockly.svgSize = function(svg) {
  * @type {Object.<!Array>}
  */
 Blockly.scopeVariableList = {
-    'Types': ['String', 'Number', 'Boolean', 'Array', 'Map']
+    'Types': ['String', 'Number', 'Boolean', 'Array', 'Map', 'AndroidViewComponent']
 };
 /**
  * Defines list of variable type equivalences.
