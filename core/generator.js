@@ -131,7 +131,7 @@ Blockly.Generator.prototype.workspaceToCode = function(workspace, parms) {
  */
 Blockly.Generator.prototype.prefixLines = function(text, prefix) {
   if (Array.isArray(text)) {
-    text = text[0];
+    text = text[0] +";\n";
   }
   console.log(text);
   return prefix + text.replace(/\n(.)/g, '\n' + prefix + '$1');
