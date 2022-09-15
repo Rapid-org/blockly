@@ -560,8 +560,10 @@ Blockly.Java.mapType = function(type) {
   }
 
   var typeArray = null;
-  if (type) {
+  if (type && !Array.isArray(type)) {
     typeArray = type.split(':');
+  } else if (Array.isArray(type)) {
+    typeArray = type;
   }
 
   return mapType_(this.typeMapping, typeArray);
