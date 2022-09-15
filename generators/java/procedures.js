@@ -261,6 +261,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
     funcName + '(' + args.join(', ') + ') {\n' +
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleProperty");
+  Blockly.Java.addImport("com.google.appinventor.components.annotations.DesignerProperty");
   Blockly.Java.addImport("com.google.appinventor.components.common.PropertyTypeConstants");
   code = Blockly.Java.scrub_(block, code);
   Blockly.Java.definitions_[funcName + ":" + args.join(",")] = code;
