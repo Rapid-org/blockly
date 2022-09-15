@@ -156,8 +156,7 @@ Blockly.Java['initialize_variable'] = function (block) {
       Blockly.Java.ORDER_NONE) || '0';
   if(block.procedurePrefix_ != '') {
     // Variable setter.
-    var vartype = Blockly.Java.GetVariableType(block.procedurePrefix_+
-        block.getFieldValue('VAR'));
+    var vartype = block.getFieldValue("TYPE");
     if ('LinkedList' === vartype) {
         Blockly.Java.addImport('java.util.LinkedList');
     }
