@@ -1440,9 +1440,9 @@ Blockly.BlockSvg.prototype.updateColour = function() {
   }
   function shadeColor(color, percent) {
 
-    var R = parseInt(color.substring(1,3),16);
-    var G = parseInt(color.substring(3,5),16);
-    var B = parseInt(color.substring(5,7),16);
+    let R = parseInt(color.substring(1, 3), 16);
+    let G = parseInt(color.substring(3, 5), 16);
+    let B = parseInt(color.substring(5, 7), 16);
 
     R = parseInt(R * (100 + percent) / 100);
     G = parseInt(G * (100 + percent) / 100);
@@ -1452,9 +1452,9 @@ Blockly.BlockSvg.prototype.updateColour = function() {
     G = (G<255)?G:255;
     B = (B<255)?B:255;
 
-    var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
-    var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
-    var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+    var RR = ((R.toString(16).length===1)?"0"+R.toString(16):R.toString(16));
+    var GG = ((G.toString(16).length===1)?"0"+G.toString(16):G.toString(16));
+    var BB = ((B.toString(16).length===1)?"0"+B.toString(16):B.toString(16));
 
     return "#"+RR+GG+BB;
   }
@@ -1468,8 +1468,8 @@ Blockly.BlockSvg.prototype.updateColour = function() {
         this.svgPathDark_.setAttribute('fill', hexColour);
     } else {
         this.svgPathLight_.style.display = '';
-        var hexLight = rgbArrayToHex(shadeColor(rgbArrayToHex(rgb), 30));
-        var hexDark = rgbArrayToHex(shadeColor(rgbArrayToHex(rgb), -20));
+        var hexLight = hexToRgb(shadeColor(rgbArrayToHex(rgb), 30));
+        var hexDark = hexToRgb(shadeColor(rgbArrayToHex(rgb), -20));
         this.svgPathLight_.setAttribute('stroke', hexLight);
         this.svgPathDark_.setAttribute('fill', hexDark);
     }
