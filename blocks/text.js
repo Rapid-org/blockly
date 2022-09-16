@@ -32,7 +32,7 @@ goog.require('Blockly.Blocks');
 /**
  * Common HSV hue for all blocks in this category.
  */
-Blockly.Blocks.texts.HUE = 160;
+Blockly.Blocks.texts.HUE = "#D50000";
 
 Blockly.Blocks['text'] = {
   /**
@@ -741,7 +741,7 @@ Blockly.Blocks['text_printf'] = {
     this.setNextStatement(true);
     this.appendAddSubGroup(Blockly.Msg.TEXT_PRINTF_CREATEWITH, 'items',null,
     '-IGNORED-');
-  },  
+  },
   /**
    * Create XML to represent number of text inputs.
    * @return {!Element} XML storage element.
@@ -837,7 +837,7 @@ Blockly.Blocks['text_sprintf'] = {
     this.appendAddSubGroup(Blockly.Msg.TEXT_SPRINTF_CREATEWITH, 'items',null,
     '-IGNORED-');
     this.setOutput(true, 'String');
-  },  
+  },
   /**
    * Create XML to represent number of text inputs.
    * @return {!Element} XML storage element.
@@ -1029,12 +1029,12 @@ Blockly.Blocks['text_comment'] = {
    * @this Blockly.Block
    */
   init: function() {
-  
+
     this.setColour(160);
     //this.setHelpUrl(Blockly.Msg.TEXT_PROMPT_HELPURL);
     this.appendDummyInput()
 		.appendField(Blockly.Msg.TEXT_COMMENT_TEXT);
-    this.appendDummyInput()    
+    this.appendDummyInput()
         .appendField(new Blockly.FieldTextArea(''), 'COMMENT')
         ;
 	this.setPreviousStatement(true);

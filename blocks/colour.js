@@ -32,7 +32,7 @@ goog.require('Blockly.Blocks');
 /**
  * Common HSV hue for all blocks in this category.
  */
-Blockly.Blocks.colour.HUE = "#BDBDBD";
+Blockly.Blocks.colour.HUE = "#9E9E9E";
 
 Blockly.Blocks['colour_picker'] = {
   /**

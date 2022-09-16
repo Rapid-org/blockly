@@ -1422,7 +1422,12 @@ Blockly.BlockSvg.prototype.updateColour = function() {
         // Disabled blocks don't have colour.
         return;
     }
-    var hexColour = Blockly.makeColour(this.getColour());
+    var hexColour;
+    if (this.getColour().toString().startsWith("#")) {
+      hexColour = this.getColour();
+    } else {
+      hexColour = Blockly.makeColour(this.getColour());
+    }
     var rgb = goog.color.hexToRgb(hexColour);
     if (this.isShadow()) {
         rgb = goog.color.lighten(rgb, 0.6);

@@ -32,7 +32,7 @@ goog.require('Blockly.Blocks');
 /**
  * Common HSV hue for all blocks in this category.
  */
-Blockly.Blocks.lists.HUE = 260;
+Blockly.Blocks.lists.HUE = "#29B6F6";
 
 Blockly.Blocks['lists_create_empty'] = {
   /**
@@ -283,7 +283,7 @@ Blockly.Blocks['lists_length'] = {
       "helpUrl": Blockly.Msg.LISTS_LENGTH_HELPURL
     });
   },
-  typeblock: Blockly.Msg.LISTS_LENGTH_TYPEBLOCK 
+  typeblock: Blockly.Msg.LISTS_LENGTH_TYPEBLOCK
 };
 
 Blockly.Blocks['lists_isEmpty'] = {
