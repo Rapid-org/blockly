@@ -1461,16 +1461,15 @@ Blockly.BlockSvg.prototype.updateColour = function() {
     var hexColour = this.getColour();
     console.log("hex", hexColour);
     var rgb = hexToRgb(hexColour);
-    console.log("rgb", rgb)
     if (this.isShadow()) {
-        rgb = shadeColor(rgb, 60);
+        rgb = hexToRgb(shadeColor(hexColour, 60));
         hexColour = rgbArrayToHex(rgb);
         this.svgPathLight_.style.display = 'none';
         this.svgPathDark_.setAttribute('fill', hexColour);
     } else {
         this.svgPathLight_.style.display = '';
-        var hexLight = rgbArrayToHex(shadeColor(rgb, 30));
-        var hexDark = rgbArrayToHex(shadeColor(rgb, -20));
+        var hexLight = rgbArrayToHex(shadeColor(rgbArrayToHex(rgb), 30));
+        var hexDark = rgbArrayToHex(shadeColor(rgbArrayToHex(rgb), -20));
         this.svgPathLight_.setAttribute('stroke', hexLight);
         this.svgPathDark_.setAttribute('fill', hexDark);
     }
