@@ -1438,19 +1438,39 @@ Blockly.BlockSvg.prototype.updateColour = function() {
   function rgbArrayToHex(arr) {
     return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
   }
+  function shadeColor(color, percent) {
+
+    var R = parseInt(color.substring(1,3),16);
+    var G = parseInt(color.substring(3,5),16);
+    var B = parseInt(color.substring(5,7),16);
+
+    R = parseInt(R * (100 + percent) / 100);
+    G = parseInt(G * (100 + percent) / 100);
+    B = parseInt(B * (100 + percent) / 100);
+
+    R = (R<255)?R:255;
+    G = (G<255)?G:255;
+    B = (B<255)?B:255;
+
+    var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
+    var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
+    var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+
+    return "#"+RR+GG+BB;
+  }
     var hexColour = this.getColour();
     console.log("hex", hexColour);
     var rgb = hexToRgb(hexColour);
     console.log("rgb", rgb)
     if (this.isShadow()) {
-        rgb = goog.color.lighten(rgb, 0.6);
+        rgb = shadeColor(rgb, 60);
         hexColour = rgbArrayToHex(rgb);
         this.svgPathLight_.style.display = 'none';
         this.svgPathDark_.setAttribute('fill', hexColour);
     } else {
         this.svgPathLight_.style.display = '';
-        var hexLight = rgbArrayToHex(goog.color.lighten(rgb, 0.3));
-        var hexDark = rgbArrayToHex(goog.color.darken(rgb, 0.2));
+        var hexLight = rgbArrayToHex(shadeColor(rgb, 30));
+        var hexDark = rgbArrayToHex(shadeColor(rgb, -20));
         this.svgPathLight_.setAttribute('stroke', hexLight);
         this.svgPathDark_.setAttribute('fill', hexDark);
     }
