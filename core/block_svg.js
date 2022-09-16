@@ -1431,7 +1431,9 @@ Blockly.BlockSvg.prototype.updateColour = function() {
       : null;
   }
     var hexColour = this.getColour();
+    console.log("hex", hexColour);
     var rgb = hexToRgb(hexColour);
+    console.log("rgb", rgb)
     if (this.isShadow()) {
         rgb = goog.color.lighten(rgb, 0.6);
         hexColour = goog.color.rgbArrayToHex(rgb);
