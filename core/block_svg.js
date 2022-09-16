@@ -1472,7 +1472,7 @@ Blockly.BlockSvg.prototype.updateColour = function() {
         console.log("rgbb", rgbArrayToHex(rgb));
       console.log("hext", shadeColor(rgbArrayToHex(rgb), 30));
         var hexLight = shadeColor(rgbArrayToHex(rgb), 30);
-        var hexDark = shadeColor(rgbArrayToHex(rgb), -20);
+        var hexDark = rgbArrayToHex(rgb);
         this.svgPathLight_.setAttribute('stroke', hexLight);
         this.svgPathDark_.setAttribute('fill', hexDark);
     }
