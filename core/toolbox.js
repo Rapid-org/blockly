@@ -214,7 +214,7 @@ Blockly.Toolbox.prototype.populate_ = function(newTree) {
           }
           var hue = childIn.getAttribute('colour');
           if (typeof hue === "string") {
-            childOut.hexColour = Blockly.makeColour(hue);
+            childOut.hexColour = hue;
             hasColours = true;
           } else {
             childOut.hexColour = '';
