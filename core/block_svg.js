@@ -1436,6 +1436,7 @@ Blockly.BlockSvg.prototype.updateColour = function() {
   }
 
   function rgbArrayToHex(arr) {
+      console.log("rgbArrHex", arr);
     return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
   }
   function shadeColor(color, percent) {
