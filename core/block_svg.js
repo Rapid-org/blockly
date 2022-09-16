@@ -1430,19 +1430,27 @@ Blockly.BlockSvg.prototype.updateColour = function() {
         parseInt(result[3], 16)]
       : null;
   }
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length === 1 ? "0" + hex : hex;
+  }
+
+  function rgbArrayToHex(arr) {
+    return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
+  }
     var hexColour = this.getColour();
     console.log("hex", hexColour);
     var rgb = hexToRgb(hexColour);
     console.log("rgb", rgb)
     if (this.isShadow()) {
         rgb = goog.color.lighten(rgb, 0.6);
-        hexColour = goog.color.rgbArrayToHex(rgb);
+        hexColour = rgbArrayToHex(rgb);
         this.svgPathLight_.style.display = 'none';
         this.svgPathDark_.setAttribute('fill', hexColour);
     } else {
         this.svgPathLight_.style.display = '';
-        var hexLight = goog.color.rgbArrayToHex(goog.color.lighten(rgb, 0.3));
-        var hexDark = goog.color.rgbArrayToHex(goog.color.darken(rgb, 0.2));
+        var hexLight = rgbArrayToHex(goog.color.lighten(rgb, 0.3));
+        var hexDark = rgbArrayToHex(goog.color.darken(rgb, 0.2));
         this.svgPathLight_.setAttribute('stroke', hexLight);
         this.svgPathDark_.setAttribute('fill', hexDark);
     }
