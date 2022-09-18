@@ -605,32 +605,7 @@ Blockly.Connection.prototype.closest = function(maxLimit, dx, dy) {
  * @private
  */
 Blockly.Connection.prototype.checkType_ = function(otherConnection) {
-  // Don't split a connection where both sides are immovable.
-  var thisTargetBlock = this.targetBlock();
-  if (thisTargetBlock && !thisTargetBlock.isMovable() &&
-      !this.sourceBlock_.isMovable()) {
-    return false;
-  }
-  var otherTargetBlock = otherConnection.targetBlock();
-  if (otherTargetBlock && !otherTargetBlock.isMovable() &&
-      !otherConnection.sourceBlock_.isMovable()) {
-    return false;
-  }
-
-  if (!this.check_ || !otherConnection.check_) {
-    // One or both sides are promiscuous enough that anything will fit.
-    // Make sure the other side allows that type of connection.
-    return ((!this.check_ && !otherConnection.requireType_) ||
-      (!otherConnection.check_ && !this.requireType_));
-  }
-  // Find any intersection in the check lists.
-  for (var i = 0; i < this.check_.length; i++) {
-    if (otherConnection.check_.indexOf(this.check_[i]) !== -1) {
-      return true;
-    }
-  }
-  // No intersection.
-  return false;
+  return true;
 };
 
 /**
@@ -653,7 +628,7 @@ Blockly.Connection.prototype.setCheck = function(check,requireType) {
     this.check_ = check;
     this.requireType_ = !!requireType;
     // The new value type may not be compatible with the existing connection.
-    if (this.targetConnection && !this.checkType_(this.targetConnection)) {
+    /*if (this.targetConnection && !this.checkType_(this.targetConnection)) {
       if (this.isSuperior()) {
         this.targetBlock().setParent(null);
       } else {
@@ -661,7 +636,7 @@ Blockly.Connection.prototype.setCheck = function(check,requireType) {
       }
       // Bump away.
       this.sourceBlock_.bumpNeighbours_();
-    }
+    }*/
   } else {
     this.check_ = null;
   }

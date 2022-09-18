@@ -407,7 +407,7 @@ Blockly.Blocks['initialize_variable'] = {
   renameVar: Blockly.Blocks['variables_get'].renameVar,
   changeType: function(newType) {
     var block = this.sourceBlock_;
-    //block.getInput('VALUE').setCheck(newType);
+    block.getInput('VALUE').setCheck(newType);
   },
   /**
    * Return all Scoped Variables referenced by this block.
