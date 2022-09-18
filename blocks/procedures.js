@@ -1032,7 +1032,7 @@ Blockly.Blocks['procedures_deftrycatchnoreturn'] = {
 };
 
 
-Blockly.Blocks['procedures_definithnoreturn'] = {
+Blockly.Blocks['procedures_definitnoreturn'] = {
   /**
    * Block for defining a procedure with a return value.
    * @this Blockly.Block
