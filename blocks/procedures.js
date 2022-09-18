@@ -1050,7 +1050,7 @@ Blockly.Blocks['procedures_definitnoreturn'] = {
       this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
     }
     this.appendDummyInput()
-      .appendField(Blockly.Msg.PROCEDURES_DEFPTRYCATCHNORETURN_TITLE)
+      .appendField(Blockly.Msg.PROCEDURES_DEFINITNORETURN_TITLE)
       .appendField("initialize", "NAME");
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
@@ -1074,9 +1074,7 @@ Blockly.Blocks['procedures_definitnoreturn'] = {
   domToMutation: Blockly.Blocks['procedures_defnoreturn'].domToMutation,
   decompose: Blockly.Blocks['procedures_defnoreturn'].decompose,
   compose: Blockly.Blocks['procedures_defnoreturn'].compose,
-  dispose: function () {
-    console.log("Cannot dispose constructor method.");
-  },
+  dispose: Blockly.Blocks['procedures_defnoreturn'].dispose,
   getProcedureDef: Blockly.Blocks['procedures_defnoreturn'].getProcedureDef,
   getVars: Blockly.Blocks['procedures_defnoreturn'].getVars,
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
