@@ -56,11 +56,11 @@ Blockly.Blocks['controls_repeat_ext'] = {
       "helpUrl": Blockly.Msg.CONTROLS_REPEAT_HELPURL
     });
     this.appendStatementInput('DO')
-        .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
+      .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
   },
   isLoop: true,
   typeblock: [{entry: Blockly.Msg.CONTROLS_REPEAT_TYPEBLOCK,
-               values: {'TIMES' : 10 }}]
+    values: {'TIMES' : 10 }}]
 };
 
 Blockly.Blocks['controls_repeat'] = {
@@ -86,9 +86,9 @@ Blockly.Blocks['controls_repeat'] = {
       "helpUrl": Blockly.Msg.CONTROLS_REPEAT_HELPURL
     });
     this.appendStatementInput('DO')
-        .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
+      .appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
     this.getField('TIMES').setChangeHandler(
-        Blockly.FieldTextInput.nonnegativeIntegerValidator);
+      Blockly.FieldTextInput.nonnegativeIntegerValidator);
   },
   isLoop: true//,
 // No typeblock because this is deprecated in
@@ -104,15 +104,15 @@ Blockly.Blocks['controls_whileUntil'] = {
    */
   init: function() {
     var OPERATORS =
-        [[Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE, 'WHILE'],
-         [Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL, 'UNTIL']];
+      [[Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE, 'WHILE'],
+        [Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL, 'UNTIL']];
     this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL);
     this.setColour(Blockly.Blocks.loops.HUE);
     this.appendValueInput('BOOL')
-        .setCheck('Boolean')
-        .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
+      .setCheck('Boolean')
+      .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
     this.appendStatementInput('DO')
-        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+      .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
@@ -128,9 +128,9 @@ Blockly.Blocks['controls_whileUntil'] = {
   },
   isLoop: true,
   typeblock: [{entry: Blockly.Msg.CONTROLS_WHILEUNTIL_WHILE_TYPEBLOCK,
-               fields: {'MODE' : 'WHILE' }},
-              {entry: Blockly.Msg.CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK,
-               fields: {'MODE' : 'UNTIL' }}]
+    fields: {'MODE' : 'WHILE' }},
+    {entry: Blockly.Msg.CONTROLS_WHILEUNTIL_UNTIL_TYPEBLOCK,
+      fields: {'MODE' : 'UNTIL' }}]
 };
 
 Blockly.Blocks['controls_for'] = {
@@ -173,12 +173,12 @@ Blockly.Blocks['controls_for'] = {
       "helpUrl": Blockly.Msg.CONTROLS_FOR_HELPURL
     });
     this.appendStatementInput('DO')
-        .appendField(Blockly.Msg.CONTROLS_FOR_INPUT_DO);
+      .appendField(Blockly.Msg.CONTROLS_FOR_INPUT_DO);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
       return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace('%1',
-          thisBlock.getFieldValue('VAR'));
+        thisBlock.getFieldValue('VAR'));
     });
   },
   isLoop: true,
@@ -196,9 +196,9 @@ Blockly.Blocks['controls_for'] = {
    * @this Blockly.Block
    */
   getVarsTypes: function() {
-      var vartypes = {};
-      vartypes[this.getFieldValue('VAR')] = ['Number'];
-      return vartypes;
+    var vartypes = {};
+    vartypes[this.getFieldValue('VAR')] = ['Number'];
+    return vartypes;
   },
   /**
    * Notification that a variable is renaming.
@@ -231,7 +231,7 @@ Blockly.Blocks['controls_for'] = {
     }
   },
   typeblock: [{entry: Blockly.Msg.CONTROLS_FOR_TYPEBLOCK,
-               values: {'FROM': 1, 'TO': 10, 'BY': 1}}]
+    values: {'FROM': 1, 'TO': 10, 'BY': 1}}]
 };
 
 Blockly.Blocks['controls_forEach'] = {
@@ -260,12 +260,12 @@ Blockly.Blocks['controls_forEach'] = {
       "helpUrl": Blockly.Msg.CONTROLS_FOREACH_HELPURL
     });
     this.appendStatementInput('DO')
-        .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_DO);
+      .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_DO);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
       return Blockly.Msg.CONTROLS_FOREACH_TOOLTIP.replace('%1',
-          thisBlock.getFieldValue('VAR'));
+        thisBlock.getFieldValue('VAR'));
     });
   },
   isLoop: true,
@@ -283,20 +283,20 @@ Blockly.Blocks['controls_forEach'] = {
    * @this Blockly.Block
    */
   getVarsTypes: function() {
-      var vartypes = {};
-      var foundtypes = {};
-      var listblock = this.getInputTargetBlock('LIST');
-      var looptypes = listblock.getOutput();
-      if (looptypes) {
-        for (var i = 0; i < looptypes.length; i++) {
-          var type = looptypes[i];
-          var x = type.split(':');
-          foundtypes[x[1]] = 1;
-        }
+    var vartypes = {};
+    var foundtypes = {};
+    var listblock = this.getInputTargetBlock('LIST');
+    var looptypes = listblock.getOutput();
+    if (looptypes) {
+      for (var i = 0; i < looptypes.length; i++) {
+        var type = looptypes[i];
+        var x = type.split(':');
+        foundtypes[x[1]] = 1;
       }
+    }
 
-      vartypes[this.getFieldValue('VAR')] = Object.keys(foundtypes);
-      return vartypes;
+    vartypes[this.getFieldValue('VAR')] = Object.keys(foundtypes);
+    return vartypes;
   },
   /**
    * Notification that a variable is renaming.
@@ -321,12 +321,12 @@ Blockly.Blocks['controls_flow_statements'] = {
    */
   init: function() {
     var OPERATORS =
-        [[Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK, 'BREAK'],
-         [Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE, 'CONTINUE']];
+      [[Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK, 'BREAK'],
+        [Blockly.Msg.CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE, 'CONTINUE']];
     this.setHelpUrl(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL);
     this.setColour(Blockly.Blocks.loops.HUE);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown(OPERATORS), 'FLOW');
+      .appendField(new Blockly.FieldDropdown(OPERATORS), 'FLOW');
     this.setPreviousStatement(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
@@ -362,7 +362,23 @@ Blockly.Blocks['controls_flow_statements'] = {
     }
   },
   typeblock: [{entry: Blockly.Msg.CONTROLS_FLOW_STATEMENTS_BREAK_TYPEBLOCK,
-               fields: {'FLOW' : 'BREAK' }},
-              {entry: Blockly.Msg.CONTROLS_FLOW_STATEMENTS_CONTINUE_TYPEBLOCK,
-               fields: {'FLOW' : 'CONTINUE' }}]
+    fields: {'FLOW' : 'BREAK' }},
+    {entry: Blockly.Msg.CONTROLS_FLOW_STATEMENTS_CONTINUE_TYPEBLOCK,
+      fields: {'FLOW' : 'CONTINUE' }}]
+};
+
+Blockly.Blocks['controls_try_catch'] = {
+  // Try
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_REPEAT_HELPURL);
+
+    this.setColour(Blockly.Blocks.loops.HUE);
+    this.appendStatementInput('TRY')
+      .appendTitle('try');
+    this.appendStatementInput('CATCH')
+      .appendTitle('catch');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('Standard try { } catch (Exception err) {..} you must provide an error handler to consume the error message');
+  }
 };

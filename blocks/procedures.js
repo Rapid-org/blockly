@@ -546,7 +546,9 @@ Blockly.Blocks['procedures_defnoreturn'] = {
     var xmlBlock = goog.dom.createDom('block', null, xmlMutation);
     xmlBlock.setAttribute('type', this.callType_);
     option.callback = Blockly.ContextMenu.callbackFactory(this, xmlBlock);
-    options.push(option);
+    if (this.isCallable) {
+      options.push(option);
+    }
 
     // Add options to create getters for each parameter.
     if (!this.isCollapsed()) {
@@ -564,7 +566,8 @@ Blockly.Blocks['procedures_defnoreturn'] = {
     }
   },
   isTopLevel: true,
-  callType_: 'procedures_callnoreturn'
+  callType_: 'procedures_callnoreturn',
+  isCallable: true
 };
 
 Blockly.Blocks['procedures_defreturn'] = {
@@ -632,7 +635,8 @@ Blockly.Blocks['procedures_defreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callreturn'
+  callType_: 'procedures_callreturn',
+  isCallable: true
 };
 
 Blockly.Blocks['procedures_deffunctionreturn'] = {
@@ -709,7 +713,8 @@ Blockly.Blocks['procedures_deffunctionreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionnoreturn'
+  callType_: 'procedures_callfunctionnoreturn',
+  isCallable: true
 };
 
 Blockly.Blocks['procedures_deffunctionnoreturn'] = {
@@ -771,7 +776,8 @@ Blockly.Blocks['procedures_deffunctionnoreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionnoreturn'
+  callType_: 'procedures_callfunctionnoreturn',
+  isCallable: true
 };
 
 Blockly.Blocks['procedures_defeventnoreturn'] = {
@@ -833,7 +839,8 @@ Blockly.Blocks['procedures_defeventnoreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_calleventnoreturn'
+  callType_: 'procedures_calleventnoreturn',
+  isCallable: true
 };
 
 
@@ -901,7 +908,8 @@ Blockly.Blocks['procedures_defpropertyreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callfunctionreturn'
+  callType_: 'procedures_callfunctionreturn',
+  isCallable: true
 };
 
 Blockly.Blocks['procedures_defpropertynoreturn'] = {
@@ -968,7 +976,59 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
   getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
   renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
   customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
-  callType_: 'procedures_callpropertynoreturn'
+  callType_: 'procedures_callpropertynoreturn',
+  isCallable: true
+};
+
+Blockly.Blocks['procedures_deftrycatchnoreturn'] = {
+  /**
+   * Block for defining a procedure with a return value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
+    this.setColour(Blockly.Blocks.loops.HUE);
+    var addField = '';
+    var addName = 'PARAMS';
+    if (!this.workspace.options.useMutators) {
+      addField = new Blockly.FieldClickImage(this.addPng, 17, 17);
+      addField.setChangeHandler(this.doAddField);
+      addName = null;
+    } else {
+      this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
+    }
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.PROCEDURES_DEFPTRYCATCHNORETURN_TITLE)
+      .appendField("handleError");
+    this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
+    this.setInputsInline(false);
+    this.arguments_ = [{name: "error", type: "Exception", id: this.argid++}];
+    this.argid = 0;
+    this.setStatements_(true);
+    this.statementConnection_ = null;
+    this.updateParams_();
+  },
+  isTopLevel: true,
+  doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
+  doRemoveField: function () {
+    console.log("Attempt to remove try catch single parameter.")
+  },
+  updateParam: Blockly.Blocks['procedures_defnoreturn'].updateParam,
+  updateType: Blockly.Blocks['procedures_defnoreturn'].updateType,
+  setStatements_: Blockly.Blocks['procedures_defnoreturn'].setStatements_,
+  validate: Blockly.Blocks['procedures_defnoreturn'].validate,
+  updateParams_: Blockly.Blocks['procedures_defnoreturn'].updateParams_,
+  mutationToDom: Blockly.Blocks['procedures_defnoreturn'].mutationToDom,
+  domToMutation: Blockly.Blocks['procedures_defnoreturn'].domToMutation,
+  decompose: Blockly.Blocks['procedures_defnoreturn'].decompose,
+  compose: Blockly.Blocks['procedures_defnoreturn'].compose,
+  dispose: Blockly.Blocks['procedures_defnoreturn'].dispose,
+  getProcedureDef: Blockly.Blocks['procedures_defnoreturn'].getProcedureDef,
+  getVars: Blockly.Blocks['procedures_defnoreturn'].getVars,
+  getVarsTypes: Blockly.Blocks['procedures_defnoreturn'].getVarsTypes,
+  renameVar: Blockly.Blocks['procedures_defnoreturn'].renameVar,
+  customContextMenu: Blockly.Blocks['procedures_defnoreturn'].customContextMenu,
+  isCallable: false
 };
 
 Blockly.Blocks['procedures_callnoreturn'] = {

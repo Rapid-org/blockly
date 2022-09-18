@@ -77,7 +77,7 @@ Blockly.Java['controls_whileUntil'] = function(block) {
     Blockly.Java.stashStatement('boolean ' + argvar + ' = ' + argument0 + ';\n');
     argument0 = argvar;
   }
-      
+
   if (until) {
     argument0 = '!' + argument0;
   }
@@ -224,3 +224,15 @@ Blockly.Java['controls_flow_statements'] = function(block) {
   }
   throw 'Unknown flow statement.';
 };
+
+Blockly.Java['controls_try_catch'] = function(block) {
+
+  // try catch
+  var tryblock = Blockly.JavaScript.statementToCode(block, 'TRY');
+  var catchblock = Blockly.JavaScript.statementToCode(block, 'CATCH');
+  var code = 'try {\n' + tryblock + '}\n';
+  var errorVar = Blockly.Java.variableDB_.getDistinctName("error");
+  code += 'catch(Exception ' + errorVar + '){\nhandleError(' + errorVar + ');\n' + catchblock + '\n}';
+  return code + '\n';
+};
+
