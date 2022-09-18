@@ -134,6 +134,8 @@ Blockly.Java.icon = 'images/extension.png';
 
 Blockly.Java.name = '<<Your Name>>';
 
+Blockly.Java.libraries = "";
+
 Blockly.Java.year = new Date().getFullYear();
 /**
  * Default Name of the application for use by all generated classes
@@ -230,6 +232,9 @@ Blockly.Java.setMinSdk = function(minSdk) {
 Blockly.Java.setIcon = function(icon) {
   this.icon = icon;
 };
+Blockly.Java.setLibraries = function(libraries) {
+  this.libraries = libraries;
+};
 Blockly.Java.setName = function(name) {
   this.name = name;
 };
@@ -258,6 +263,9 @@ Blockly.Java.getMinSdk = function() {
 };
 Blockly.Java.getIcon = function() {
   return this.icon;
+};
+Blockly.Java.getLibraries = function() {
+  return this.libraries;
 };
 Blockly.Java.getName = function() {
   return this.name;
@@ -451,7 +459,6 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
 
 
   var code = this.workspaceToCode_(workspace,parms);
-  this.provideVarClass();
   this.addImport("com.google.appinventor.components.runtime.AndroidNonvisibleComponent");
   this.addImport("com.google.appinventor.components.runtime.ComponentContainer");
   this.addImport("com.google.appinventor.components.annotations.SimpleObject");
@@ -470,6 +477,9 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
     finalcode += ', androidMinSdk = ' + this.getMinSdk();
   }
   finalcode += ')\n';
+  if (this.getLibraries().length) {
+    finalcode += "@UsesLibraries(libraries=\"" + this.getLibraries() + "\")";
+  }
   finalcode += 'public class ' + this.getAppName();
   var baseClass = this.getBaseclass();
   if (baseClass != '') {
