@@ -228,8 +228,8 @@ Blockly.Java['controls_flow_statements'] = function(block) {
 Blockly.Java['controls_try_catch'] = function(block) {
 
   // try catch
-  var tryblock = Blockly.JavaScript.statementToCode(block, 'TRY');
-  var catchblock = Blockly.JavaScript.statementToCode(block, 'CATCH');
+  var tryblock = Blockly.Java.statementToCode(block, 'TRY');
+  var catchblock = Blockly.Java.statementToCode(block, 'CATCH');
   var code = 'try {\n' + tryblock + '}\n';
   var errorVar = Blockly.Java.variableDB_.getDistinctName("error");
   code += 'catch(Exception ' + errorVar + '){\nhandleError(' + errorVar + ');\n' + catchblock + '\n}';
