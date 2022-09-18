@@ -100,7 +100,7 @@ Blockly.Generator.prototype.workspaceToCode = function(workspace, parms) {
     if (typeof line === "array") {
       // Value blocks return tuples of code and operator order.
       // Top-level blocks don't care about operator order.
-      line = line[0];
+      line = line[0] + ";\n";
     }
     if (line) {
       if (block.outputConnection && this.scrubNakedValue) {
