@@ -999,7 +999,7 @@ Blockly.Blocks['procedures_deftrycatchnoreturn'] = {
     }
     this.appendDummyInput()
       .appendField(Blockly.Msg.PROCEDURES_DEFPTRYCATCHNORETURN_TITLE)
-      .appendField("handleError");
+      .appendField("handleError", "NAME");
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [{name: "error", type: "Exception", id: this.argid++}];
