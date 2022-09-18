@@ -464,6 +464,7 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   this.addImport("com.google.appinventor.components.annotations.SimpleObject");
   this.addImport("com.google.appinventor.components.annotations.DesignerComponent");
   this.addImport("com.google.appinventor.components.common.ComponentCategory");
+  this.addImport("com.google.appinventor.components.annotations.UsesLibraries");
   this.setBaseclass("AndroidNonvisibleComponent")
   var finalcode = this.fileHeader.replace("<<Your Name>>", this.getName()).replace("<<Year>>", this.year) +
       'package ' + this.getPackage() + ';\n\n' +
@@ -496,6 +497,7 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   finalcode += ' {\n\n' +
       '  public ' + this.getAppName() + '(ComponentContainer container) {\n' +
       '    super(container.$form());\n' +
+      '    initialize(container);\n' +
       '  }\n' +
       code + '\n' +
       '}\n\n' +
@@ -717,8 +719,8 @@ Blockly.Java.finish = function(code) {
       if ((res1.length >= 2) && (res1[0].indexOf(";") ===-1)) {
         // Figure out the header to put on the function
         var header = '  /**\n' +
-            ' * Description goes here\n';
-        var extra =  ' *\n';
+            '   * Description goes here\n';
+        var extra =  '   *\n';
         var res = res1[0];  // Get everything before the (
         var res2 = res.split(" ");
         var rettype = res2[res2.length-2]; // The next to the last word
@@ -729,15 +731,15 @@ Blockly.Java.finish = function(code) {
           var args = res.split(",");
           for (var arg = 0; arg < args.length; arg++) {
             var argline = args[arg].split(" ");
-            header += extra + ' * @param ' + argline[argline.length-1] + '\n';
+            header += extra + '   * @param ' + argline[argline.length-1] + '\n';
             extra = '';
           }
         }
         if (rettype !== 'void' && rettype !== 'public') {
-          header += extra + ' * @return ' + rettype + '\n';
+          header += extra + '   * @return ' + rettype + '\n';
           extra = '';
         }
-        header += ' */\n';
+        header += '   */\n';
       }
 
       allDefs += header + def + '\n\n';
