@@ -1436,7 +1436,6 @@ Blockly.BlockSvg.prototype.updateColour = function() {
   }
 
   function rgbArrayToHex(arr) {
-      console.log("rgbArrHex", arr);
     return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
   }
   function shadeColor(color, percent) {
@@ -1460,7 +1459,6 @@ Blockly.BlockSvg.prototype.updateColour = function() {
     return "#"+RR+GG+BB;
   }
     var hexColour = this.getColour() || "#000000";
-    console.log("hex", hexColour);
     var rgb = hexToRgb(hexColour);
     if (this.isShadow()) {
         rgb = hexToRgb(shadeColor(hexColour, 60));
@@ -1469,8 +1467,6 @@ Blockly.BlockSvg.prototype.updateColour = function() {
         this.svgPathDark_.setAttribute('fill', hexColour);
     } else {
         this.svgPathLight_.style.display = '';
-        console.log("rgbb", rgbArrayToHex(rgb));
-      console.log("hext", shadeColor(rgbArrayToHex(rgb), 30));
         var hexLight = shadeColor(rgbArrayToHex(rgb), 30);
         var hexDark = rgbArrayToHex(rgb);
         this.svgPathLight_.setAttribute('stroke', hexLight);
