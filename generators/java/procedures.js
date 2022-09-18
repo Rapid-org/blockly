@@ -97,6 +97,8 @@ function getJavaType(type) {
 // a procedure with a return value.
 Blockly.Java['procedures_defnoreturn'] =
   Blockly.Java['procedures_defreturn'];
+Blcokly.Java['procedures_deftrycatchnoreturn'] =
+  Blockly.Java['procedures_defreturn']
 
 Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
   // Define a procedure with a return value.

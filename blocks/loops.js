@@ -371,12 +371,11 @@ Blockly.Blocks['controls_try_catch'] = {
   // Try
   init: function() {
     this.setHelpUrl(Blockly.Msg.CONTROLS_REPEAT_HELPURL);
-
     this.setColour(Blockly.Blocks.loops.HUE);
     this.appendStatementInput('TRY')
-      .appendTitle('try');
+      .appendField('try');
     this.appendStatementInput('CATCH')
-      .appendTitle('catch');
+      .appendField('catch');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip('Standard try { } catch (Exception err) {..} you must provide an error handler to consume the error message');
