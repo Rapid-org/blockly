@@ -694,6 +694,9 @@ Blockly.Blocks['procedures_deffunctionreturn'] = {
     this.setStatements_(true);
     this.statementConnection_ = null;
     this.hasReturnValue_ = true;
+    this.appendDummyInput()
+      .appendField("Description: ")
+      .appendField(new Blockly.FieldTextInput(""), 'DESCRIPTION');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
@@ -757,6 +760,9 @@ Blockly.Blocks['procedures_deffunctionnoreturn'] = {
     this.argid = 0;
     this.setStatements_(true);
     this.statementConnection_ = null;
+    this.appendDummyInput()
+      .appendField("Description: ")
+      .appendField(new Blockly.FieldTextInput(""), 'DESCRIPTION');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
@@ -820,6 +826,9 @@ Blockly.Blocks['procedures_defeventnoreturn'] = {
     this.argid = 0;
     this.setStatements_(true);
     this.statementConnection_ = null;
+    this.appendDummyInput()
+      .appendField("Description: ")
+      .appendField(new Blockly.FieldTextInput(""), 'DESCRIPTION');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
@@ -889,6 +898,9 @@ Blockly.Blocks['procedures_defpropertyreturn'] = {
     this.setStatements_(true);
     this.statementConnection_ = null;
     this.hasReturnValue_ = true;
+    this.appendDummyInput()
+      .appendField("Description: ")
+      .appendField(new Blockly.FieldTextInput(""), 'DESCRIPTION');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
@@ -955,6 +967,9 @@ Blockly.Blocks['procedures_defpropertynoreturn'] = {
     this.appendDummyInput()
       .appendField("Designer Property: ")
       .appendField(new Blockly.FieldCheckbox('TRUE'), 'DESIGNER');
+    this.appendDummyInput()
+      .appendField("Description: ")
+      .appendField(new Blockly.FieldTextInput(""), 'DESCRIPTION');
   },
   isTopLevel: true,
   doAddField: Blockly.Blocks['procedures_defnoreturn'].doAddField,
@@ -1051,7 +1066,7 @@ Blockly.Blocks['procedures_definitnoreturn'] = {
     }
     this.appendDummyInput()
       .appendField(Blockly.Msg.PROCEDURES_DEFINITNORETURN_TITLE)
-      .appendField("initialize", "NAME");
+      .appendField("Initialize", "NAME");
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [{name: "container", type: "ComponentContainer", id: this.argid++}];

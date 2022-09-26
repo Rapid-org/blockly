@@ -68,7 +68,6 @@ Blockly.Java['procedures_defreturn'] = function(block) {
   var code = 'public ' + retType + ' ' +
     funcName + '(' + args.join(', ') + '){\n' +
     branch + returnValue + "}";
-  Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleFunction");
   code = Blockly.Java.scrub_(block, code);
   Blockly.Java.definitions_[funcName] = code;
   return null;
@@ -139,7 +138,7 @@ Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
         Blockly.Variables.NAME_TYPE);
   }
 
-  var code = '  @SimpleFunction\n  public ' + retType + ' ' +
+  var code = '  @SimpleFunction(description="'  + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType + ' ' +
     funcName + '(' + args.join(', ') + ') {\n' +
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleFunction");
@@ -188,7 +187,7 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
       Blockly.Variables.NAME_TYPE);
   }
 
-  var code = '  @SimpleEvent\n  public ' + retType + ' ' +
+  var code = '  @SimpleEvent(description="' + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType +
     funcName + '(' + args.join(', ') + ') {\n' +
     "EventDispatcher.dispatchEvent(this, \"" + funcName + "\"" + ", " + argsNoTypes.join(', ') + ");\n" +
     branch + returnValue + "  }";
@@ -242,7 +241,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
   var code = '';
   var designerProperty = block.getFieldValue("DESIGNER");
   if (designerProperty && designerProperty === "TRUE") {
-    code += '@DesignerProperty(editorType=PropertyTypeConstants.';
+    code += '@DesignerProperty(editorType = PropertyTypeConstants.';
     var propType = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[0]['name']);
     var defaultVal = "";
@@ -261,7 +260,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
     }
     code += ", defaultValue=\"" + defaultVal + "\")\n";
   }
-  code += '  @SimpleProperty\n  public ' + retType + ' ' +
+  code += '  @SimpleProperty(description=\"' + block.getFieldValue("DESCRIPTION") + '\")\n    public ' + retType + ' ' +
     funcName + '(' + args.join(', ') + ') {\n' +
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleProperty");
