@@ -497,7 +497,7 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   finalcode += ' {\n\n' +
       '  public ' + this.getAppName() + '(ComponentContainer container) {\n' +
       '    super(container.$form());\n' +
-      '    initialize(container);\n' +
+      '    Initialize(container);\n' +
       '  }\n' +
       code + '\n' +
       '}\n\n' +
