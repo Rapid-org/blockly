@@ -279,7 +279,7 @@ Blockly.Procedures.disposeCallers = function(name, workspace) {
 Blockly.Procedures.mutateCallers = function(name, workspace, parameters) {
   var callers = Blockly.Procedures.getCallers(name, workspace);
   for (var i = 0; i < callers.length; i++) {
-    callers[x].setProcedureParameters(parameters);
+    callers[i].setProcedureParameters(parameters);
   }
 };
 
