@@ -123,11 +123,6 @@ Blockly.BlockSvg.prototype.initSvg = function() {
         if (this.isInFlyout && hasDummy) {
             if (this.inputList[i].type == Blockly.INPUT_VALUE && !isInline) {
                 counter++;
-                if (counter == numberArgumentsForBlock) {
-                    input.fieldRow[0].text_ = "<More>...";
-                } else if (counter > numberArgumentsForBlock) {
-                    input.setVisible(false);
-                }
             }
         }
         input.init();
