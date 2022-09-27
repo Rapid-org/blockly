@@ -191,7 +191,7 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
 
   var code = '  @SimpleEvent(description="' + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType + " " +
     funcName + '(' + args.join(', ') + ') {\n' +
-    "EventDispatcher.dispatchEvent(this, \"" + funcName + "\"" + ", " + argsNoTypes.join(', ') + ");\n" +
+    "EventDispatcher.dispatchEvent(this, \"" + funcName + "\"" + (argsNoTypes.length ? (", " + argsNoTypes.join(', ')) : "") + ");\n" +
     branch + returnValue + "  }";
   Blockly.Java.addImport("com.google.appinventor.components.annotations.SimpleEvent");
   Blockly.Java.addImport("com.google.appinventor.components.runtime.EventDispatcher");
