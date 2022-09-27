@@ -186,6 +186,8 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
     argsNoTypes[x] = Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
       Blockly.Variables.NAME_TYPE);
   }
+  console.log("args", args)
+  console.log("argsNoTypes", argsNoTypes)
 
   var code = '  @SimpleEvent(description="' + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType + " " +
     funcName + '(' + args.join(', ') + ') {\n' +
