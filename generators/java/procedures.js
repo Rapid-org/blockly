@@ -177,7 +177,7 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
   }
   var args = [];
   var argsNoTypes = [];
-  for (var x = 0; x < block.arguments_.length; x++) {
+  for (let x = 0; x < block.arguments_.length; x++) {
     var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[x]['name']);
     args[x] = type + ' ' +
@@ -187,7 +187,7 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
       Blockly.Variables.NAME_TYPE);
   }
 
-  var code = '  @SimpleEvent(description="' + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType +
+  var code = '  @SimpleEvent(description="' + block.getFieldValue("DESCRIPTION") + "\")\n  public " + retType + " " +
     funcName + '(' + args.join(', ') + ') {\n' +
     "EventDispatcher.dispatchEvent(this, \"" + funcName + "\"" + ", " + argsNoTypes.join(', ') + ");\n" +
     branch + returnValue + "  }";
