@@ -47,14 +47,14 @@ Blockly.Java = new Blockly.Generator('Java');
  * @private
  */
 Blockly.Java.addReservedWords(
-    // import keyword
-    // print ','.join(keyword.kwlist)
-    // http://en.wikipedia.org/wiki/List_of_Java_keywords
-    'abstract,assert,boolean,break,case,catch,class,const,continue,default,do,double,else,enum,extends,final,finally,float,for,goto,if,implements,import,instanceof,int,interface,long,native,new,package,private,protected,public,return,short,static,strictfp,super,switch,synchronized,this,throw,throws,transient,try,void,volatile,while,' +
-    //http://en.wikipedia.org/wiki/List_of_Java_keywords#Reserved_words_for_literal_values
-    'false,null,true,' +
-    // http://docs.Java.org/library/functions.html
-    'abs,divmod,input,open,staticmethod,all,enumerate,int,ord,str,any,eval,isinstance,pow,sum,basestring,execfile,issubclass,print,super,bin,file,iter,property,tuple,bool,filter,len,range,type,bytearray,float,list,raw_input,unichr,callable,format,locals,reduce,unicode,chr,frozenset,long,reload,vars,classmethod,getattr,map,repr,xrange,cmp,globals,max,reversed,zip,compile,hasattr,memoryview,round,__import__,complex,hash,min,set,apply,delattr,help,next,setattr,buffer,dict,hex,object,slice,coerce,dir,id,oct,sorted,intern,equal');
+  // import keyword
+  // print ','.join(keyword.kwlist)
+  // http://en.wikipedia.org/wiki/List_of_Java_keywords
+  'abstract,assert,boolean,break,case,catch,class,const,continue,default,do,double,else,enum,extends,final,finally,float,for,goto,if,implements,import,instanceof,int,interface,long,native,new,package,private,protected,public,return,short,static,strictfp,super,switch,synchronized,this,throw,throws,transient,try,void,volatile,while,' +
+  //http://en.wikipedia.org/wiki/List_of_Java_keywords#Reserved_words_for_literal_values
+  'false,null,true,' +
+  // http://docs.Java.org/library/functions.html
+  'abs,divmod,input,open,staticmethod,all,enumerate,int,ord,str,any,eval,isinstance,pow,sum,basestring,execfile,issubclass,print,super,bin,file,iter,property,tuple,bool,filter,len,range,type,bytearray,float,list,raw_input,unichr,callable,format,locals,reduce,unicode,chr,frozenset,long,reload,vars,classmethod,getattr,map,repr,xrange,cmp,globals,max,reversed,zip,compile,hasattr,memoryview,round,__import__,complex,hash,min,set,apply,delattr,help,next,setattr,buffer,dict,hex,object,slice,coerce,dir,id,oct,sorted,intern,equal');
 
 /**
  * Order of operation ENUMs.
@@ -179,31 +179,31 @@ Blockly.Java.targetType_ = null;
  *
  */
 Blockly.Java.fileHeader =
-    '/*\n'+
-    ' * Copyright (c) <<Year>>, <<Your Name>>\n'+
-    ' * All rights reserved.\n'+
-    ' *\n'+
-    ' * Redistribution and use in source and binary forms, with or without\n'+
-    ' * modification, are permitted provided that the following conditions are met:\n'+
-    ' *\n'+
-    ' * * Redistributions of source code must retain the above copyright notice, this\n'+
-    ' *   list of conditions and the following disclaimer.\n'+
-    ' * * Redistributions in binary form must reproduce the above copyright notice,\n'+
-    ' *   this list of conditions and the following disclaimer in the documentation\n'+
-    ' *   and/or other materials provided with the distribution.\n'+
-    ' *\n'+
-    ' * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\n'+
-    ' * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n'+
-    ' * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n'+
-    ' * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE\n'+
-    ' * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n'+
-    ' * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n'+
-    ' * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n'+
-    ' * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n'+
-    ' * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n'+
-    ' * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n'+
-    ' * POSSIBILITY OF SUCH DAMAGE.\n'+
-    ' */\n';
+  '/*\n'+
+  ' * Copyright (c) <<Year>>, <<Your Name>>\n'+
+  ' * All rights reserved.\n'+
+  ' *\n'+
+  ' * Redistribution and use in source and binary forms, with or without\n'+
+  ' * modification, are permitted provided that the following conditions are met:\n'+
+  ' *\n'+
+  ' * * Redistributions of source code must retain the above copyright notice, this\n'+
+  ' *   list of conditions and the following disclaimer.\n'+
+  ' * * Redistributions in binary form must reproduce the above copyright notice,\n'+
+  ' *   this list of conditions and the following disclaimer in the documentation\n'+
+  ' *   and/or other materials provided with the distribution.\n'+
+  ' *\n'+
+  ' * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\n'+
+  ' * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n'+
+  ' * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n'+
+  ' * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE\n'+
+  ' * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n'+
+  ' * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n'+
+  ' * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n'+
+  ' * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n'+
+  ' * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n'+
+  ' * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n'+
+  ' * POSSIBILITY OF SUCH DAMAGE.\n'+
+  ' */\n';
 /**
  * Set the application name for generated classes
  * @param {string} name Name for the application for any generated code
@@ -354,8 +354,8 @@ Blockly.Java.getInterfaces = function() {
  */
 Blockly.Java.setGlobalVar = function(block,name,val) {
   if (Blockly.Variables.getLocalContext(block,name) == null &&
-      (typeof this.globals_[name] === 'undefined' ||
-          this.globals_[name] === null)) {
+    (typeof this.globals_[name] === 'undefined' ||
+      this.globals_[name] === null)) {
     this.globals_[name] = val;
   }
 };
@@ -467,10 +467,10 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
   this.addImport("com.google.appinventor.components.annotations.UsesLibraries");
   this.setBaseclass("AndroidNonvisibleComponent")
   var finalcode = this.fileHeader.replace("<<Your Name>>", this.getName()).replace("<<Year>>", this.year) +
-      'package ' + this.getPackage() + ';\n\n' +
-      this.getImports() + '\n' +
-      '@SimpleObject(external=true)\n' +
-      '@DesignerComponent(version = ' + this.getVersionNumber() +', nonVisible = true, category = ComponentCategory.EXTENSION, iconName = "' + this.getIcon() + '", description = "' + this.getDescription() + '", versionName = "' + this.getVersionName() + '"';
+    'package ' + this.getPackage() + ';\n\n' +
+    this.getImports() + '\n' +
+    '@SimpleObject(external=true)\n' +
+    '@DesignerComponent(version = ' + this.getVersionNumber() +', nonVisible = true, category = ComponentCategory.EXTENSION, iconName = "' + this.getIcon() + '", description = "' + this.getDescription() + '", versionName = "' + this.getVersionName() + '"';
   if (this.getHomeWebsite().length) {
     finalcode += ', helpUrl = "' + this.getHomeWebsite() + '"';
   }
@@ -495,13 +495,13 @@ Blockly.Java.workspaceToCode = function(workspace, parms) {
     }
   }
   finalcode += ' {\n\n' +
-      '  public ' + this.getAppName() + '(ComponentContainer container) {\n' +
-      '    super(container.$form());\n' +
-      '    Initialize(container);\n' +
-      '  }\n' +
-      code + '\n' +
-      '}\n\n' +
-      this.getClasses()
+    '  public ' + this.getAppName() + '(ComponentContainer container) {\n' +
+    '    super(container.$form());\n' +
+    '    Initialize(container);\n' +
+    '  }\n' +
+    code + '\n' +
+    '}\n\n' +
+    this.getClasses()
   ;
   return finalcode;
 }
@@ -621,6 +621,7 @@ Blockly.Java.init = function(workspace, imports) {
   this.functionNames_ = Object.create(null);
   // Create a dictionary of all the libraries which would be needed
   this.imports_ = [];
+  this.interfaces_ = []
   // Dictionary of any extra classes to output
   this.classes_ = Object.create(null);
   // Dictionary of all the globals
@@ -631,7 +632,7 @@ Blockly.Java.init = function(workspace, imports) {
   }
   if (!this.variableDB_) {
     this.variableDB_ =
-        new Blockly.Names(this.RESERVED_WORDS_);
+      new Blockly.Names(this.RESERVED_WORDS_);
   } else {
     this.variableDB_.reset();
   }
@@ -679,7 +680,7 @@ Blockly.Java.finish = function(code) {
         slot = 0;
       }
     }
-      funcs[slot].push(name);
+    funcs[slot].push(name);
   }
 
   // We have all the functions broken into two slots.  So go through in order
@@ -699,7 +700,7 @@ Blockly.Java.finish = function(code) {
       initializer = ' = ""';
     }
     var varname = Blockly.Java.variableDB_.getName(def,
-        Blockly.Variables.NAME_TYPE);
+      Blockly.Variables.NAME_TYPE);
     allDefs += 'public ' + type + ' ' + varname + initializer + ';\n';
   }
 
@@ -719,7 +720,7 @@ Blockly.Java.finish = function(code) {
       if ((res1.length >= 2) && (res1[0].indexOf(";") ===-1)) {
         // Figure out the header to put on the function
         var header = '  /**\n' +
-            '   * Description goes here\n';
+          '   * Description goes here\n';
         var extra =  '   *\n';
         var res = res1[0];  // Get everything before the (
         var res2 = res.split(" ");
@@ -1421,14 +1422,14 @@ Blockly.Java.toStringCode = function(block,name) {
   // Empty strings and quoted strings are perfectly fine as they are
   if (item !== '' && item.charAt(0) !== '"') {
     if ((targetBlock.type === 'variables_get') &&
-        (Blockly.Java.GetVariableType(targetBlock.procedurePrefix_+
-            targetBlock.getFieldValue('VAR')) === 'Var')) {
+      (Blockly.Java.GetVariableType(targetBlock.procedurePrefix_+
+        targetBlock.getFieldValue('VAR')) === 'Var')) {
       item += '.toString()';
     } else if (Blockly.isNumber(item)) {
       // Pure numbers get quoted
       item = '"' + item + '"';
     } else if(targetBlock.type !== 'variables_get' &&
-        Blockly.Java.GetVariableType(item) === 'Var') {
+      Blockly.Java.GetVariableType(item) === 'Var') {
       item = item + '.toString()';
     } else {
       // It is something else so we need to convert it on the fly
@@ -1436,36 +1437,36 @@ Blockly.Java.toStringCode = function(block,name) {
       this.addImport('java.text.NumberFormat');
 
       var functionName = this.provideFunction_(
-          'blocklyToString',
-          [ 'public static String blocklyToString(Object object) {',
-            '    String result;',
-            '    if (object instanceof String) {',
-            '        result = (String) object;',
-            '    } else {',
-            '        // must be a number',
-            '        // might be a double',
-            '        try {',
-            '            Double d = (double) object;',
-            '            // it was a double, so keep going',
-            '            NumberFormat formatter = new DecimalFormat("#.#####");',
-            '            result = formatter.format(d);',
-            '',
-            '        } catch (Exception ex) {',
-            '            // not a double, see if it is an integer',
-            '            try {',
-            '                Integer i = (int) object;',
-            '                // format should be number with a decimal point',
-            '                result = i.toString();',
-            '            } catch (Exception ex2) {',
-            '                // not a double or integer',
-            '                result = "UNKNOWN";',
-            '            }',
-            '        }',
-            '    }',
-            '',
-            '  return result;',
-            '}'
-          ]);
+        'blocklyToString',
+        [ 'public static String blocklyToString(Object object) {',
+          '    String result;',
+          '    if (object instanceof String) {',
+          '        result = (String) object;',
+          '    } else {',
+          '        // must be a number',
+          '        // might be a double',
+          '        try {',
+          '            Double d = (double) object;',
+          '            // it was a double, so keep going',
+          '            NumberFormat formatter = new DecimalFormat("#.#####");',
+          '            result = formatter.format(d);',
+          '',
+          '        } catch (Exception ex) {',
+          '            // not a double, see if it is an integer',
+          '            try {',
+          '                Integer i = (int) object;',
+          '                // format should be number with a decimal point',
+          '                result = i.toString();',
+          '            } catch (Exception ex2) {',
+          '                // not a double or integer',
+          '                result = "UNKNOWN";',
+          '            }',
+          '        }',
+          '    }',
+          '',
+          '  return result;',
+          '}'
+        ]);
       item = functionName + '(' + item + ')';
     }
   }
