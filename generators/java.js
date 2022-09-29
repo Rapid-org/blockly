@@ -620,7 +620,6 @@ Blockly.Java.init = function(workspace, imports) {
   // to actual function names (to avoid collisions with user functions).
   this.functionNames_ = Object.create(null);
   // Create a dictionary of all the libraries which would be needed
-  this.imports_ = [];
   this.interfaces_ = []
   // Dictionary of any extra classes to output
   this.classes_ = Object.create(null);
