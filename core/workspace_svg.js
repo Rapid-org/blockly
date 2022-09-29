@@ -1245,3 +1245,7 @@ Blockly.WorkspaceSvg.prototype.getToolboxCategoryCallback = function(key) {
 Blockly.WorkspaceSvg.prototype.removeToolboxCategoryCallback = function(key) {
   this.toolboxCategoryCallbacks_[key] = null;
 };
+
+Blockly.WorkspaceSvg.prototype.getToolbox = function() {
+  return this.toolbox_;
+};
