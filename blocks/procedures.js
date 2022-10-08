@@ -600,15 +600,7 @@ Blockly.Blocks['procedures_defreturn'] = {
         .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
     this.appendDummyInput()
         .appendField('Returns: ')
-        .appendField(new Blockly.FieldDropdown([
-          ['String', 'STRING'],
-          ['Number', 'NUMBER'],
-          ['Array', 'ARRAY'],
-          ['Colour', 'COLOUR'],
-          ['Boolean', 'BOOLEAN'],
-          ['Object', 'OBJECT'],
-          ['Component', 'COMPONENT'],
-        ]), 'PROCEDURE_RETURN_TYPE');
+        .appendField(new Blockly.FieldScopeVariable("Types"), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [];
@@ -678,15 +670,7 @@ Blockly.Blocks['procedures_deffunctionreturn'] = {
         .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
     this.appendDummyInput()
         .appendField('Returns: ')
-        .appendField(new Blockly.FieldDropdown([
-          ['String', 'STRING'],
-          ['Number', 'NUMBER'],
-          ['Array', 'ARRAY'],
-          ['Colour', 'COLOUR'],
-          ['Boolean', 'BOOLEAN'],
-          ['Object', 'OBJECT'],
-          ['AndroidViewComponent', 'COMPONENT'],
-        ]), 'PROCEDURE_RETURN_TYPE');
+        .appendField(new Blockly.FieldScopeVariable("Types"), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [];
@@ -882,15 +866,7 @@ Blockly.Blocks['procedures_defpropertyreturn'] = {
       .appendField(Blockly.Msg.PROCEDURES_DEFRETURN_RETURN);
     this.appendDummyInput()
       .appendField('Returns: ')
-      .appendField(new Blockly.FieldDropdown([
-        ['String', 'STRING'],
-        ['Number', 'NUMBER'],
-        ['Array', 'ARRAY'],
-        ['Colour', 'COLOUR'],
-        ['Boolean', 'BOOLEAN'],
-        ['Object', 'OBJECT'],
-        ['AndroidViewComponent', 'COMPONENT'],
-      ]), 'PROCEDURE_RETURN_TYPE');
+      .appendField(new Blockly.FieldScopeVariable("Types"), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);
     this.arguments_ = [];

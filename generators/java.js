@@ -517,7 +517,7 @@ Blockly.Java.getValueType = function(block, field) {
 
 Blockly.Java.typeMapping = {
   'Object' : 'Object',
-  'Array':   'YailList',
+  'List':   'YailList',
   'Map':     'HashMap',
   'Boolean': 'boolean',
   'String':  'String',
@@ -528,7 +528,7 @@ Blockly.Java.typeMapping = {
 
 Blockly.Java.subtypeMapping = {
   'Object' : 'Object',
-  'Array':   'YailList',
+  'List':   'YailList',
   'Map':     'HashMap',
   'Boolean': 'boolean',
   'String':  'String',
