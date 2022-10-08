@@ -607,7 +607,7 @@ Blockly.Blocks['procedures_defreturn'] = {
           ['Colour', 'COLOUR'],
           ['Boolean', 'BOOLEAN'],
           ['Object', 'OBJECT'],
-          ['AndroidViewComponent', 'COMPONENT'],
+          ['Component', 'COMPONENT'],
         ]), 'PROCEDURE_RETURN_TYPE');
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setInputsInline(false);

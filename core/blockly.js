@@ -263,6 +263,16 @@ Blockly.svgSize = function(svg) {
 Blockly.scopeVariableList = {
     'Types': ['String', 'Number', 'Boolean', 'Array', 'Map', 'AndroidViewComponent']
 };
+
+Blockly.updateScopeVariableTypes = function(newTypes) {
+  let classNames = Blockly.scopeVariableList;
+  for (let classz in newTypes) {
+    console.log("newTypes classz", newTypes[classz])
+    classNames['Types'].push(newTypes[classz].displayName)
+  }
+  console.log("outtt", classNames)
+  this.scopeVariableList = classNames
+}
 /**
  * Defines list of variable type equivalences.
  * @type {Object.<!Array>}

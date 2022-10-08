@@ -523,7 +523,7 @@ Blockly.Java.typeMapping = {
   'String':  'String',
   'Colour':  'String',
   'Number':  'double',
-  'AndroidViewComponent':'com.google.appinventor.components.runtime.AndroidViewComponent'
+  'Component':'com.google.appinventor.components.runtime.Component'
 };
 
 Blockly.Java.subtypeMapping = {
@@ -534,7 +534,7 @@ Blockly.Java.subtypeMapping = {
   'String':  'String',
   'Colour':  'String',
   'Number':  'Double',
-  'AndroidViewComponent':'com.google.appinventor.components.runtime.AndroidViewComponent'
+  'Component':'com.google.appinventor.components.runtime.Component'
 };
 
 /**
