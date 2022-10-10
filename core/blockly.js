@@ -268,7 +268,7 @@ Blockly.updateScopeVariableTypes = function(newTypes) {
   let classNames = Blockly.scopeVariableList;
   for (let classz in newTypes) {
     console.log("newTypes classz", newTypes[classz])
-    classNames['Types'].push(newTypes[classz].displayName)
+    classNames['Types'].push(newTypes[classz].simpleName)
   }
   console.log("outtt", classNames)
   this.scopeVariableList = classNames
