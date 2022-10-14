@@ -60,7 +60,7 @@ Blockly.Java['procedures_defreturn'] = function(block) {
   for (var x = 0; x < block.arguments_.length; x++) {
     var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[x]['name']);
-    args[x] = type + ' ' +
+    args[x] = 'final'+ type + ' ' +
       Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
         Blockly.Variables.NAME_TYPE);
   }
@@ -133,7 +133,7 @@ Blockly.Java['procedures_deffunctionnoreturn'] = function (block) {
   for (var x = 0; x < block.arguments_.length; x++) {
     var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[x]['name']);
-    args[x] = type + ' ' +
+    args[x] = 'final'+ type + ' ' +
       Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
         Blockly.Variables.NAME_TYPE);
   }
@@ -180,7 +180,7 @@ Blockly.Java['procedures_defeventnoreturn'] = function (block) {
   for (let x = 0; x < block.arguments_.length; x++) {
     var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[x]['name']);
-    args[x] = type + ' ' +
+    args[x] = 'final'+ type + ' ' +
       Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
         Blockly.Variables.NAME_TYPE);
     argsNoTypes[x] = Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
@@ -235,7 +235,7 @@ Blockly.Java['procedures_defpropertynoreturn'] = function (block) {
   for (var x = 0; x < block.arguments_.length; x++) {
     var type = Blockly.Java.GetVariableType(funcPrefix + '.' +
       block.arguments_[x]['name']);
-    args[x] = type + ' ' +
+    args[x] = 'final'+ type + ' ' +
       Blockly.Java.variableDB_.getName(block.arguments_[x]['name'],
         Blockly.Variables.NAME_TYPE);
   }
