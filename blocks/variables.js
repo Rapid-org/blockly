@@ -406,6 +406,7 @@ Blockly.Blocks['initialize_variable'] = {
   getVars: Blockly.Blocks['variables_get'].getVars,
   renameVar: Blockly.Blocks['variables_get'].renameVar,
   changeType: function(newType) {
+    console.log("NEWTYPE", newType)
     var block = this.sourceBlock_;
     block.getInput('VALUE').setCheck(newType);
   },
